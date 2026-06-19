@@ -7,20 +7,21 @@
   <title>AI Systems Engineer Roadmap</title>
   <style>
     :root {
-      --bg: #0f172a;
-      --bg-deep: #0b1220;
+      --bg: #0B1120;
+      --bg-deep: #070c17;
       --bg-soft: #111827;
-      --card: #182235;
+      --card: #162033;
       --card-2: #1e293b;
       --text: #e5e7eb;
       --muted: #94a3b8;
-      --line: rgba(148, 163, 184, 0.17);
-      --line-strong: rgba(148, 163, 184, 0.3);
+      --muted-deep: #64748b;
+      --line: rgba(38, 52, 73, 0.82);
+      --line-strong: #263449;
       --accent: #76B900;
       --accent-soft: rgba(118, 185, 0, 0.14);
       --blue: #38bdf8;
       --amber: #f59e0b;
-      --red: #f87171;
+      --red: #fb7185;
       --violet: #a78bfa;
       --max: 1180px;
       --radius: 8px;
@@ -39,7 +40,9 @@
       margin: 0;
       color: var(--text);
       background:
-        linear-gradient(180deg, rgba(17, 24, 39, 0.94), rgba(15, 23, 42, 0.98)),
+        radial-gradient(circle at 20% 0%, rgba(118, 185, 0, 0.08), transparent 32%),
+        radial-gradient(circle at 86% 16%, rgba(56, 189, 248, 0.07), transparent 30%),
+        linear-gradient(180deg, rgba(11, 17, 32, 0.98), rgba(11, 17, 32, 1)),
         repeating-linear-gradient(90deg, rgba(148, 163, 184, 0.04) 0 1px, transparent 1px 112px),
         repeating-linear-gradient(0deg, rgba(148, 163, 184, 0.035) 0 1px, transparent 1px 112px),
         var(--bg);
@@ -111,6 +114,15 @@
       font-size: 13px;
     }
 
+    .brand-mark::before {
+      width: 14px;
+      height: 14px;
+      border: 2px solid currentColor;
+      border-radius: 4px;
+      box-shadow: 6px 6px 0 rgba(118, 185, 0, 0.28);
+      content: "";
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
@@ -155,7 +167,7 @@
     }
 
     .section {
-      padding: 88px 24px;
+      padding: 96px 24px;
     }
 
     .section.alt {
@@ -256,7 +268,7 @@
     .hero {
       position: relative;
       min-height: calc(100vh - 70px);
-      padding: 92px 24px 70px;
+      padding: 96px 24px 72px;
       isolation: isolate;
     }
 
@@ -272,7 +284,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(340px, 0.58fr);
+      grid-template-columns: minmax(0, 1fr) minmax(340px, 0.48fr);
       align-items: center;
       gap: 48px;
     }
@@ -288,6 +300,10 @@
       padding-left: 16px;
       color: var(--muted);
       font-size: 16px;
+    }
+
+    .hero-title-line {
+      display: block;
     }
 
     .hero-panel {
@@ -314,9 +330,189 @@
       padding: 18px;
     }
 
+    .system-map-block {
+      display: grid;
+      gap: 12px;
+      border: 1px solid rgba(38, 52, 73, 0.95);
+      border-radius: 7px;
+      padding: 14px;
+      background: rgba(11, 17, 32, 0.58);
+    }
+
+    .system-map-block strong {
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .node-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .node-chain span {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 999px;
+      padding: 6px 9px;
+      color: var(--text);
+      background: rgba(22, 32, 51, 0.82);
+      font-size: 12px;
+      font-weight: 760;
+      white-space: nowrap;
+    }
+
+    .node-chain.core span {
+      border-color: rgba(118, 185, 0, 0.34);
+      background: rgba(118, 185, 0, 0.1);
+    }
+
+    .node-chain.expansion span {
+      border-color: rgba(167, 139, 250, 0.34);
+      background: rgba(167, 139, 250, 0.09);
+    }
+
+    .spine-compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .spine-card {
+      display: grid;
+      gap: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(20px, 3vw, 28px);
+      background: rgba(22, 32, 51, 0.94);
+      box-shadow: 0 14px 48px rgba(0, 0, 0, 0.16);
+    }
+
+    .spine-card.primary {
+      border-color: rgba(118, 185, 0, 0.42);
+      background: linear-gradient(135deg, rgba(118, 185, 0, 0.12), rgba(22, 32, 51, 0.94));
+    }
+
+    .spine-card.secondary {
+      border-color: rgba(167, 139, 250, 0.34);
+      background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(22, 32, 51, 0.94));
+    }
+
+    .ordered-node-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: node;
+    }
+
+    .ordered-node-list li {
+      counter-increment: node;
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.13);
+      border-radius: 7px;
+      padding: 10px;
+      background: rgba(11, 17, 32, 0.42);
+      color: var(--text);
+      font-weight: 760;
+    }
+
+    .ordered-node-list li::before {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 7px;
+      color: #07110d;
+      background: var(--accent);
+      content: counter(node);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .spine-card.secondary .ordered-node-list li::before {
+      color: var(--text);
+      background: rgba(167, 139, 250, 0.28);
+    }
+
+    .training-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .training-card {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      background: rgba(22, 32, 51, 0.92);
+      box-shadow: 0 14px 48px rgba(0, 0, 0, 0.16);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .training-card:hover {
+      border-color: rgba(118, 185, 0, 0.42);
+      box-shadow: 0 18px 56px rgba(0, 0, 0, 0.24);
+      transform: translateY(-2px);
+    }
+
+    .training-card.featured {
+      border-color: rgba(118, 185, 0, 0.48);
+      background: linear-gradient(135deg, rgba(118, 185, 0, 0.13), rgba(22, 32, 51, 0.94));
+    }
+
+    .training-index {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border: 1px solid rgba(118, 185, 0, 0.52);
+      border-radius: 7px;
+      color: var(--accent);
+      background: rgba(118, 185, 0, 0.1);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .training-card h3 {
+      font-size: 18px;
+    }
+
+    .training-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .training-rule {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+      border: 1px solid rgba(118, 185, 0, 0.44);
+      border-radius: var(--radius);
+      padding: clamp(20px, 3vw, 26px);
+      background:
+        linear-gradient(135deg, rgba(118, 185, 0, 0.13), rgba(56, 189, 248, 0.06)),
+        rgba(22, 32, 51, 0.94);
+      box-shadow: var(--shadow);
+    }
+
+    .training-rule h3 {
+      color: var(--text);
+      font-size: clamp(21px, 3vw, 28px);
+    }
+
     .route-ribbon {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       align-items: center;
       gap: 12px;
       margin-top: 40px;
@@ -328,10 +524,10 @@
     }
 
     .route-step {
-      min-height: 92px;
+      min-height: 120px;
       border: 1px solid rgba(148, 163, 184, 0.13);
       border-radius: 7px;
-      padding: 14px;
+      padding: 18px;
       background: rgba(24, 34, 53, 0.78);
     }
 
@@ -343,6 +539,25 @@
     .route-step span {
       color: var(--muted);
       font-size: 13px;
+    }
+
+    .route-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .route-chain span {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 999px;
+      padding: 5px 9px;
+      color: var(--text);
+      background: rgba(15, 23, 42, 0.5);
+      font-size: 12px;
+      font-weight: 750;
     }
 
     .route-step.core-route {
@@ -458,6 +673,7 @@
       border-radius: var(--radius);
       background: rgba(24, 34, 53, 0.92);
       box-shadow: 0 14px 48px rgba(0, 0, 0, 0.16);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
     }
 
     .card {
@@ -472,6 +688,8 @@
     .matrix-col:hover,
     .cap-card:hover {
       border-color: rgba(118, 185, 0, 0.44);
+      box-shadow: 0 18px 56px rgba(0, 0, 0, 0.24), 0 0 0 1px rgba(118, 185, 0, 0.08);
+      transform: translateY(-2px);
     }
 
     .current-grid {
@@ -734,56 +952,101 @@
       font-weight: 900;
     }
 
+    .project-timeline {
+      position: relative;
+      display: grid;
+      gap: 18px;
+    }
+
+    .project-month {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .project-month-marker {
+      position: sticky;
+      top: 92px;
+      display: grid;
+      gap: 8px;
+      border: 1px solid rgba(118, 185, 0, 0.3);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: rgba(15, 23, 42, 0.72);
+    }
+
+    .project-month-marker strong {
+      font-size: 18px;
+    }
+
+    .project-month-marker span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
     .project-ladder {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
     }
 
     .project-card {
       display: grid;
-      gap: 14px;
-      padding: 22px;
+      gap: 13px;
+      padding: 18px;
       align-content: start;
     }
 
-    .project-index {
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 850;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .project-card h3 {
+      font-size: 18px;
     }
 
-    .month-label {
-      display: inline-flex;
-      width: fit-content;
-      border: 1px solid rgba(56, 189, 248, 0.42);
-      border-radius: 999px;
-      padding: 4px 9px;
-      color: var(--blue);
-      background: rgba(56, 189, 248, 0.1);
+    .project-card-head {
+      display: grid;
+      gap: 8px;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .project-sequence {
+      color: var(--muted);
       font-size: 12px;
-      font-weight: 850;
+      font-weight: 820;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     .project-detail-list {
       display: grid;
-      gap: 9px;
+      gap: 8px;
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
-    .project-detail-list li {
-      border-top: 1px solid rgba(148, 163, 184, 0.11);
-      padding-top: 9px;
+    .project-detail-row {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 10px;
+      align-items: start;
+      border: 1px solid rgba(148, 163, 184, 0.11);
+      border-radius: 7px;
+      padding: 9px 10px;
       color: var(--muted);
+      background: rgba(15, 23, 42, 0.38);
+      font-size: 13px;
     }
 
-    .project-detail-list strong {
+    .project-detail-label {
       color: var(--text);
+      font-weight: 850;
     }
 
     .matrix-toolbar {
@@ -821,6 +1084,60 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
+    }
+
+    .architecture-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      border: 1px solid rgba(118, 185, 0, 0.28);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: rgba(11, 17, 32, 0.58);
+    }
+
+    .flow-node {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: 999px;
+      padding: 7px 11px;
+      color: var(--text);
+      background: rgba(22, 32, 51, 0.86);
+      font-size: 13px;
+      font-weight: 790;
+    }
+
+    .flow-arrow {
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .compact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .compact-card {
+      display: grid;
+      gap: 13px;
+      align-content: start;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      background: rgba(22, 32, 51, 0.92);
+      box-shadow: 0 14px 48px rgba(0, 0, 0, 0.16);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .compact-card:hover {
+      border-color: rgba(167, 139, 250, 0.42);
+      box-shadow: 0 18px 56px rgba(0, 0, 0, 0.24);
+      transform: translateY(-2px);
     }
 
     .agent-card {
@@ -942,8 +1259,35 @@
       content: "";
     }
 
-    .role-card.avoid .clean-list li::before {
-      background: var(--red);
+    .role-card {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .role-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .role-pill {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: var(--text);
+      background: rgba(15, 23, 42, 0.42);
+      font-size: 13px;
+      font-weight: 760;
+      line-height: 1.25;
+    }
+
+    .role-card.avoid .role-pill {
+      border-color: rgba(248, 113, 113, 0.26);
+      color: #fecaca;
+      background: rgba(248, 113, 113, 0.08);
     }
 
     .skill-pill {
@@ -975,6 +1319,22 @@
       display: grid;
       grid-template-columns: 0.82fr 1.18fr;
       gap: 22px;
+    }
+
+    .copy-block {
+      display: grid;
+      gap: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.13);
+      border-radius: 7px;
+      padding: 16px;
+      background: rgba(11, 17, 32, 0.42);
+    }
+
+    .copy-block strong {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .footer {
@@ -1017,6 +1377,8 @@
       .direction-intro,
       .route-ribbon,
       .agent-grid,
+      .compact-grid,
+      .training-grid,
       .branch-grid,
       .expansion-hub-grid,
       .matrix-grid,
@@ -1026,6 +1388,8 @@
       }
 
       .project-ladder,
+      .spine-compare-grid,
+      .training-grid,
       .capability-grid,
       .replace-grid,
       .signal-grid {
@@ -1139,6 +1503,19 @@
       .card {
         padding: 19px;
       }
+
+      .project-month {
+        grid-template-columns: 1fr;
+      }
+
+      .project-month-marker {
+        position: static;
+      }
+
+      .project-detail-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
     }
   </style>
 </head>
@@ -1149,7 +1526,7 @@
   <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand" href="#top" aria-label="AI Systems Engineer Roadmap home">
-        <span class="brand-mark">AI</span>
+        <span class="brand-mark" aria-hidden="true"></span>
         <span>AI Systems Roadmap</span>
       </a>
       <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
@@ -1180,8 +1557,8 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">NVIDIA-Aligned Career System</p>
-          <h1 id="heroTitle">AI Systems Engineer Roadmap</h1>
-          <p class="lead">From LLM/RAG production to agentic AI systems, GPU inference platforms, multimodal intelligence, and physical AI readiness.</p>
+          <h1 id="heroTitle"><span class="hero-title-line">AI Systems</span><span class="hero-title-line">Engineer</span><span class="hero-title-line">Roadmap</span></h1>
+          <p class="lead">From RAG production to agentic AI systems, GPU inference platforms, AI factories, multimodal intelligence, and physical AI readiness.</p>
           <p class="hero-description">A practical roadmap for becoming an NVIDIA-ready AI Systems Engineer: someone who can build enterprise GenAI systems, design tool-using AI agents, serve models efficiently on GPUs, package AI services into platform layers, and use generative, visual, multimodal, and physical AI literacy as strategic differentiation.</p>
           <div class="chip-row" aria-label="Priority levels">
             <span class="chip">NVIDIA Systems Edition</span>
@@ -1191,28 +1568,120 @@
             <span class="badge later">Later / Not Priority</span>
           </div>
           <div class="button-row">
-            <a class="button primary" href="#direction">Explore Direction</a>
-            <a class="button" href="#path">Core Path</a>
+            <a class="button primary" href="#direction">Explore Roadmap</a>
             <a class="button" href="#projects">Project Ladder</a>
           </div>
         </div>
 
-        <aside class="hero-panel" aria-label="Roadmap preview">
+        <aside class="hero-panel" aria-label="Roadmap system map">
           <div class="panel-top">
-            <span>Strategic route</span>
+            <span>Roadmap System</span>
             <span>Core spine first</span>
           </div>
           <div class="path-preview">
-            <div class="preview-step"><span class="node">0</span><div><strong>LLM/RAG production</strong><span>Current advantage and proof base.</span></div></div>
-            <div class="preview-step"><span class="node">1</span><div><strong>Agentic AI systems</strong><span>Tools, planning, state, evaluation.</span></div></div>
-            <div class="preview-step"><span class="node">2</span><div><strong>Serving and GPU inference</strong><span>vLLM, KV cache, TTFT, TPOT, memory, cost.</span></div></div>
-            <div class="preview-step"><span class="node">3</span><div><strong>AI Factory platform</strong><span>Reusable services plus strategic expansion branches.</span></div></div>
+            <div class="system-map-block">
+              <strong>Main Spine</strong>
+              <div class="node-chain core">
+                <span>RAG</span>
+                <span>Agents</span>
+                <span>Serving</span>
+                <span>GPU Inference</span>
+                <span>AI Factory</span>
+              </div>
+            </div>
+            <div class="system-map-block">
+              <strong>Strategic Expansion</strong>
+              <div class="node-chain expansion">
+                <span>Gen Models</span>
+                <span>Visual Intelligence</span>
+                <span>Multimodal</span>
+                <span>Physical AI</span>
+              </div>
+            </div>
           </div>
         </aside>
       </div>
-      <div class="container route-ribbon" aria-label="High-level roadmap route">
-        <div class="route-step core-route"><strong>Core System Spine</strong><span>RAG Foundation → Agentic AI Systems → LLM Serving → GPU Inference → AI Factory / GenAI Platform</span></div>
-        <div class="route-step expansion-route"><strong>Strategic Expansion</strong><span>Generative Models → Visual Intelligence → Multimodal Agents → Physical AI Readiness</span></div>
+    </section>
+
+    <!-- How to Use This Roadmap -->
+    <section class="section" id="training-principles" aria-labelledby="trainingPrinciplesTitle">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Training Principles</p>
+          <h2 id="trainingPrinciplesTitle">How to Use This Roadmap</h2>
+          <p class="lead">This is not a checklist to read. It is a training system. Every skill should become a project, every project should produce evidence, and every evidence should improve your interview story.</p>
+        </div>
+        <div class="training-grid">
+          <article class="training-card featured">
+            <span class="training-index">01</span>
+            <h3>Do not collect keywords. Build proof.</h3>
+            <p>A skill only counts when it becomes something visible: a GitHub repo, benchmark table, architecture diagram, failure analysis, technical write-up, or deployable demo.</p>
+          </article>
+          <article class="training-card">
+            <span class="training-index">02</span>
+            <h3>Follow the loop: Understand → Build → Benchmark → Write → Explain.</h3>
+            <p>Learn the concept, build a working version, measure it, write down the trade-offs, then explain it clearly in 2–5 minutes as if you were in an interview.</p>
+          </article>
+          <article class="training-card">
+            <span class="training-index">03</span>
+            <h3>Main spine first, expansion later.</h3>
+            <p>The core path is RAG → Agents → Serving → GPU Inference → AI Factory. Generative models, visual intelligence, and physical AI are strategic differentiators, not distractions from the main path.</p>
+          </article>
+          <article class="training-card">
+            <span class="training-index">04</span>
+            <h3>Measure like an engineer.</h3>
+            <p>For RAG, measure recall@k, MRR, faithfulness, latency, and failure cases. For inference, measure TTFT, TPOT, tokens/sec, concurrency, GPU memory, and cost per task.</p>
+          </article>
+          <article class="training-card">
+            <span class="training-index">05</span>
+            <h3>Study trends, but do not chase hype blindly.</h3>
+            <p>Track NVIDIA, vLLM, Triton, TensorRT-LLM, Dynamo, NIM, NeMo, agentic AI, multimodal models, diffusion, synthetic data, and physical AI. Then ask: “What can I build from this?”</p>
+          </article>
+          <article class="training-card">
+            <span class="training-index">06</span>
+            <h3>Your goal is not to look busy. Your goal is to become hard to replace.</h3>
+            <p>Become the engineer who can connect product, agents, retrieval, inference, GPU deployment, evaluation, multimodal systems, and long-term AI infrastructure direction.</p>
+          </article>
+        </div>
+        <aside class="training-rule" aria-label="Training time allocation rule">
+          <span class="badge">Operating Rule</span>
+          <h3>70% Build · 20% Study Trends · 10% Polish Portfolio</h3>
+          <p class="muted">Spend most of your time building and measuring. Use trend watching to choose better projects, not to replace practice. Polish only after there is real technical evidence to show.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Main Spine vs Strategic Expansion -->
+    <section class="section alt" id="system-map" aria-labelledby="systemMapTitle">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Core System Spine</p>
+          <h2 id="systemMapTitle">Main Spine vs Strategic Expansion</h2>
+          <p class="muted">The main path is learned in order. The expansion path is learned selectively as differentiation.</p>
+        </div>
+        <div class="spine-compare-grid">
+          <article class="spine-card primary">
+            <span class="badge">Core</span>
+            <h3>Main Spine — Learn in Order</h3>
+            <ol class="ordered-node-list">
+              <li>RAG Foundation</li>
+              <li>Agentic AI Systems</li>
+              <li>LLM Serving</li>
+              <li>GPU Inference</li>
+              <li>AI Factory / GenAI Platform</li>
+            </ol>
+          </article>
+          <article class="spine-card secondary">
+            <span class="badge diff">Expansion</span>
+            <h3>Strategic Expansion — Learn Selectively</h3>
+            <ol class="ordered-node-list">
+              <li>Generative Models</li>
+              <li>Visual Intelligence</li>
+              <li>Multimodal Agents</li>
+              <li>Physical AI Readiness</li>
+            </ol>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -1261,20 +1730,20 @@
           <div class="direction-group">
             <div class="direction-group-title"><h3>Core System Directions</h3><span class="badge">Employable spine</span></div>
             <div class="direction-grid">
-              <article class="direction-card"><span class="direction-number">1</span><h3>Enterprise GenAI</h3><p>Build grounded enterprise AI workflows over private data.</p><div class="tag-row"><span class="skill-pill">RAG</span><span class="skill-pill">citations</span><span class="skill-pill">enterprise data</span><span class="skill-pill">NIM concept</span><span class="skill-pill">NeMo concept</span><span class="skill-pill">evaluation</span><span class="skill-pill">observability</span></div></article>
-              <article class="direction-card"><span class="direction-number">2</span><h3>Agentic AI Systems</h3><p>Move from answers to controlled action, tool use, planning, and traceable execution.</p><div class="tag-row"><span class="skill-pill">AI-Q concept</span><span class="skill-pill">NeMo Agent Toolkit concept</span><span class="skill-pill">tool calling</span><span class="skill-pill">planning</span><span class="skill-pill">multi-agent workflow</span><span class="skill-pill">agent evaluation</span><span class="skill-pill">guardrails</span></div></article>
-              <article class="direction-card"><span class="direction-number">3</span><h3>AI Inference Platform</h3><p>Understand how models become efficient production services.</p><div class="tag-row"><span class="skill-pill">vLLM</span><span class="skill-pill">SGLang</span><span class="skill-pill">TensorRT-LLM concept</span><span class="skill-pill">Triton</span><span class="skill-pill">Dynamo concept</span><span class="skill-pill">KV cache</span><span class="skill-pill">batching</span><span class="skill-pill">cost per token</span></div></article>
-              <article class="direction-card"><span class="direction-number">4</span><h3>AI Data Platform</h3><p>Treat data freshness, privacy, governance, and synthetic data as system concerns.</p><div class="tag-row"><span class="skill-pill">multimodal ingestion</span><span class="skill-pill">vector search</span><span class="skill-pill">metadata filtering</span><span class="skill-pill">data freshness</span><span class="skill-pill">enterprise permissions</span><span class="skill-pill">privacy</span><span class="skill-pill">governance</span></div></article>
-              <article class="direction-card"><span class="direction-number">5</span><h3>AI Factory / GenAI Platform</h3><p>Package retrieval, agents, model serving, evaluation, and monitoring as reusable platform services.</p><div class="tag-row"><span class="skill-pill">service boundaries</span><span class="skill-pill">model service</span><span class="skill-pill">agent service</span><span class="skill-pill">evaluation service</span><span class="skill-pill">observability</span><span class="skill-pill">deployment runbook</span></div></article>
+              <article class="direction-card"><span class="direction-number">1</span><span class="badge">Core</span><h3>Enterprise GenAI</h3><p>Build grounded enterprise AI workflows over private data.</p><div class="tag-row"><span class="skill-pill">RAG</span><span class="skill-pill">citations</span><span class="skill-pill">enterprise data</span><span class="skill-pill">NIM concept</span><span class="skill-pill">NeMo concept</span><span class="skill-pill">evaluation</span><span class="skill-pill">observability</span></div></article>
+              <article class="direction-card"><span class="direction-number">2</span><span class="badge">Core</span><h3>Agentic AI Systems</h3><p>Move from answers to controlled action, tool use, planning, and traceable execution.</p><div class="tag-row"><span class="skill-pill">AI-Q concept</span><span class="skill-pill">NeMo Agent Toolkit concept</span><span class="skill-pill">tool calling</span><span class="skill-pill">planning</span><span class="skill-pill">multi-agent workflow</span><span class="skill-pill">agent evaluation</span><span class="skill-pill">guardrails</span></div></article>
+              <article class="direction-card"><span class="direction-number">3</span><span class="badge">Core</span><h3>AI Inference Platform</h3><p>Understand how models become efficient production services.</p><div class="tag-row"><span class="skill-pill">vLLM</span><span class="skill-pill">SGLang</span><span class="skill-pill">TensorRT-LLM concept</span><span class="skill-pill">Triton</span><span class="skill-pill">Dynamo concept</span><span class="skill-pill">KV cache</span><span class="skill-pill">batching</span><span class="skill-pill">cost per token</span></div></article>
+              <article class="direction-card"><span class="direction-number">4</span><span class="badge">Core</span><h3>AI Data Platform</h3><p>Treat data freshness, privacy, governance, and synthetic data as system concerns.</p><div class="tag-row"><span class="skill-pill">multimodal ingestion</span><span class="skill-pill">vector search</span><span class="skill-pill">metadata filtering</span><span class="skill-pill">data freshness</span><span class="skill-pill">enterprise permissions</span><span class="skill-pill">privacy</span><span class="skill-pill">governance</span></div></article>
+              <article class="direction-card"><span class="direction-number">5</span><span class="badge">Core</span><h3>AI Factory / GenAI Platform</h3><p>Package retrieval, agents, model serving, evaluation, and monitoring as reusable platform services.</p><div class="tag-row"><span class="skill-pill">service boundaries</span><span class="skill-pill">model service</span><span class="skill-pill">agent service</span><span class="skill-pill">evaluation service</span><span class="skill-pill">observability</span><span class="skill-pill">deployment runbook</span></div></article>
             </div>
           </div>
           <div class="direction-group">
             <div class="direction-group-title"><h3>Strategic Expansion Directions</h3><span class="badge diff">Differentiators</span></div>
             <div class="direction-grid">
-              <article class="direction-card"><span class="direction-number">A</span><h3>Generative AI Models</h3><p>Understand the model families behind text, image, video, 3D generation, and synthetic data.</p><div class="tag-row"><span class="skill-pill">LLMs</span><span class="skill-pill">diffusion models</span><span class="skill-pill">image generation</span><span class="skill-pill">video generation</span><span class="skill-pill">3D generation</span><span class="skill-pill">model customization</span><span class="skill-pill">synthetic data</span></div></article>
-              <article class="direction-card"><span class="direction-number">B</span><h3>Vision Foundation Models</h3><p>Use vision models as the perception layer for multimodal agents and physical AI.</p><div class="tag-row"><span class="skill-pill">CLIP</span><span class="skill-pill">SigLIP</span><span class="skill-pill">SAM concept</span><span class="skill-pill">VLM</span><span class="skill-pill">OCR</span><span class="skill-pill">document AI</span><span class="skill-pill">video understanding</span></div></article>
-              <article class="direction-card"><span class="direction-number">C</span><h3>Visual AI Agents</h3><p>Build systems that reason over video, cameras, visual evidence, and natural-language queries.</p><div class="tag-row"><span class="skill-pill">Metropolis concept</span><span class="skill-pill">video analytics agents</span><span class="skill-pill">visual inspection</span><span class="skill-pill">multi-camera reasoning</span><span class="skill-pill">natural-language video search</span></div></article>
-              <article class="direction-card"><span class="direction-number">D</span><h3>Physical AI Readiness</h3><p>Build strategic literacy for simulation, synthetic data, world models, and embodied AI systems.</p><div class="tag-row"><span class="skill-pill">Cosmos concept</span><span class="skill-pill">Isaac Sim concept</span><span class="skill-pill">synthetic data</span><span class="skill-pill">simulation</span><span class="skill-pill">3D perception</span><span class="skill-pill">world models</span></div></article>
+              <article class="direction-card"><span class="direction-number">A</span><span class="badge diff">Expansion</span><h3>Generative AI Models</h3><p>Understand the model families behind text, image, video, 3D generation, and synthetic data.</p><div class="tag-row"><span class="skill-pill">LLMs</span><span class="skill-pill">diffusion models</span><span class="skill-pill">image generation</span><span class="skill-pill">video generation</span><span class="skill-pill">3D generation</span><span class="skill-pill">model customization</span><span class="skill-pill">synthetic data</span></div></article>
+              <article class="direction-card"><span class="direction-number">B</span><span class="badge diff">Expansion</span><h3>Vision Foundation Models</h3><p>Use vision models as the perception layer for multimodal agents and physical AI.</p><div class="tag-row"><span class="skill-pill">CLIP</span><span class="skill-pill">SigLIP</span><span class="skill-pill">SAM concept</span><span class="skill-pill">VLM</span><span class="skill-pill">OCR</span><span class="skill-pill">document AI</span><span class="skill-pill">video understanding</span></div></article>
+              <article class="direction-card"><span class="direction-number">C</span><span class="badge diff">Expansion</span><h3>Visual AI Agents</h3><p>Build systems that reason over video, cameras, visual evidence, and natural-language queries.</p><div class="tag-row"><span class="skill-pill">Metropolis concept</span><span class="skill-pill">video analytics agents</span><span class="skill-pill">visual inspection</span><span class="skill-pill">multi-camera reasoning</span><span class="skill-pill">natural-language video search</span></div></article>
+              <article class="direction-card"><span class="direction-number">D</span><span class="badge diff">Expansion</span><h3>Physical AI Readiness</h3><p>Build strategic literacy for simulation, synthetic data, world models, and embodied AI systems.</p><div class="tag-row"><span class="skill-pill">Cosmos concept</span><span class="skill-pill">Isaac Sim concept</span><span class="skill-pill">synthetic data</span><span class="skill-pill">simulation</span><span class="skill-pill">3D perception</span><span class="skill-pill">world models</span></div></article>
             </div>
           </div>
         </div>
@@ -1288,6 +1757,19 @@
           <p class="eyebrow">Agentic AI Systems</p>
           <h2 id="agenticTitle">Agents are the action and reasoning layer</h2>
           <p class="lead">RAG is the knowledge layer. Agents are the action and reasoning layer. The next step is building systems that can plan, use tools, retrieve evidence, call APIs, verify outputs, and take controlled actions with logs and guardrails.</p>
+        </div>
+        <div class="architecture-flow" aria-label="Agentic AI system flow">
+          <span class="flow-node">User Task</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node">Planner</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node">Tool Router</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node">Tools / Retrieval / APIs</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node">Verifier</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-node">Final Answer + Trace Logs</span>
         </div>
         <div class="agent-grid">
           <article class="agent-card">
@@ -1329,16 +1811,15 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Generative Models as Strategic Literacy</p>
+          <span class="badge diff">Strategic Expansion</span>
           <h2 id="generativeTitle">Generative models strengthen the systems profile</h2>
-          <p class="lead">Generative models are not the main job target, but they are essential literacy for NVIDIA-aligned systems: LLMs, diffusion, image/video/3D generation, synthetic data, and world-model direction.</p>
+          <p class="lead">Not the main path, but high-leverage literacy for NVIDIA-aligned AI systems.</p>
         </div>
-        <div class="agent-grid">
-          <article class="agent-card"><span class="badge">Text</span><h3>LLM Generative Modeling</h3><div class="tag-row"><span class="skill-pill">decoder-only transformers</span><span class="skill-pill">instruction tuning</span><span class="skill-pill">LoRA / QLoRA</span><span class="skill-pill">alignment concept</span><span class="skill-pill">synthetic data generation</span><span class="skill-pill">evaluation</span></div></article>
-          <article class="agent-card"><span class="badge">Diffusion</span><h3>Diffusion Models</h3><div class="tag-row"><span class="skill-pill">forward diffusion</span><span class="skill-pill">denoising process</span><span class="skill-pill">U-Net concept</span><span class="skill-pill">diffusion transformer concept</span><span class="skill-pill">text conditioning</span><span class="skill-pill">classifier-free guidance</span><span class="skill-pill">scheduler concept</span></div></article>
-          <article class="agent-card"><span class="badge">Image</span><h3>Image Generation</h3><div class="tag-row"><span class="skill-pill">Stable Diffusion concept</span><span class="skill-pill">FLUX concept</span><span class="skill-pill">prompt-to-image</span><span class="skill-pill">image editing</span><span class="skill-pill">ControlNet concept</span><span class="skill-pill">inpainting / outpainting</span><span class="skill-pill">safety and evaluation</span></div></article>
-          <article class="agent-card"><span class="badge core">Video</span><h3>Video Generation</h3><div class="tag-row"><span class="skill-pill">text-to-video concept</span><span class="skill-pill">image-to-video concept</span><span class="skill-pill">temporal consistency</span><span class="skill-pill">video diffusion</span><span class="skill-pill">frame interpolation</span><span class="skill-pill">long video generation challenges</span></div></article>
-          <article class="agent-card"><span class="badge core">3D</span><h3>3D Generation</h3><div class="tag-row"><span class="skill-pill">text-to-3D concept</span><span class="skill-pill">image-to-3D concept</span><span class="skill-pill">TRELLIS concept</span><span class="skill-pill">NeRF / Gaussian Splatting awareness</span><span class="skill-pill">multi-view consistency</span><span class="skill-pill">3D asset generation</span></div></article>
-          <article class="agent-card"><span class="badge diff">Synthetic Data</span><h3>Synthetic Data Generation</h3><div class="tag-row"><span class="skill-pill">data augmentation</span><span class="skill-pill">synthetic image/video data</span><span class="skill-pill">simulation data</span><span class="skill-pill">domain randomization</span><span class="skill-pill">data filtering</span><span class="skill-pill">synthetic-to-real gap</span><span class="skill-pill">evaluation</span></div></article>
+        <div class="compact-grid">
+          <article class="compact-card"><span class="badge diff">Expansion</span><h3>LLM Generation</h3><div class="tag-row"><span class="skill-pill">decoder-only transformers</span><span class="skill-pill">instruction tuning</span><span class="skill-pill">LoRA / QLoRA</span><span class="skill-pill">alignment concept</span><span class="skill-pill">evaluation</span></div></article>
+          <article class="compact-card"><span class="badge diff">Expansion</span><h3>Diffusion / Image Generation</h3><div class="tag-row"><span class="skill-pill">diffusion models</span><span class="skill-pill">Stable Diffusion concept</span><span class="skill-pill">FLUX concept</span><span class="skill-pill">ControlNet concept</span><span class="skill-pill">image editing</span></div></article>
+          <article class="compact-card"><span class="badge diff">Expansion</span><h3>Video & 3D Generation</h3><div class="tag-row"><span class="skill-pill">text-to-video concept</span><span class="skill-pill">temporal consistency</span><span class="skill-pill">text-to-3D concept</span><span class="skill-pill">TRELLIS concept</span><span class="skill-pill">multi-view consistency</span></div></article>
+          <article class="compact-card"><span class="badge diff">Expansion</span><h3>Synthetic Data</h3><div class="tag-row"><span class="skill-pill">data augmentation</span><span class="skill-pill">synthetic image/video data</span><span class="skill-pill">simulation data</span><span class="skill-pill">domain randomization</span><span class="skill-pill">evaluation</span></div></article>
         </div>
       </div>
     </section>
@@ -1348,16 +1829,15 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Visual Intelligence Layer</p>
+          <span class="badge diff">Strategic Expansion</span>
           <h2 id="visionTitle">Vision is the perception layer for future AI systems</h2>
-          <p class="lead">Vision is not the main path here. It is the perception layer that strengthens multimodal agents, visual RAG, synthetic data, and physical AI readiness.</p>
+          <p class="lead">Vision is the perception layer for multimodal agents, visual RAG, synthetic data, and physical AI readiness.</p>
         </div>
-        <div class="agent-grid">
-          <article class="agent-card"><span class="badge">CV Base</span><h3>Classical CV Foundation</h3><div class="tag-row"><span class="skill-pill">classification</span><span class="skill-pill">object detection</span><span class="skill-pill">segmentation</span><span class="skill-pill">tracking</span><span class="skill-pill">optical flow concept</span><span class="skill-pill">camera geometry basics</span></div></article>
-          <article class="agent-card"><span class="badge">VFM</span><h3>Modern Vision Models</h3><div class="tag-row"><span class="skill-pill">ViT</span><span class="skill-pill">DETR concept</span><span class="skill-pill">DINO concept</span><span class="skill-pill">SAM concept</span><span class="skill-pill">YOLO deployment</span><span class="skill-pill">foundation segmentation</span></div></article>
-          <article class="agent-card"><span class="badge">VLM</span><h3>Vision-Language Models</h3><div class="tag-row"><span class="skill-pill">CLIP</span><span class="skill-pill">SigLIP</span><span class="skill-pill">BLIP concept</span><span class="skill-pill">VLM prompting</span><span class="skill-pill">image-text retrieval</span><span class="skill-pill">visual grounding</span></div></article>
-          <article class="agent-card"><span class="badge core">Video</span><h3>Video Understanding</h3><div class="tag-row"><span class="skill-pill">video retrieval</span><span class="skill-pill">multi-frame reasoning</span><span class="skill-pill">temporal modeling</span><span class="skill-pill">event detection</span><span class="skill-pill">video captioning</span><span class="skill-pill">video analytics agents</span></div></article>
-          <article class="agent-card"><span class="badge core">Documents</span><h3>Document & Visual Data AI</h3><div class="tag-row"><span class="skill-pill">OCR</span><span class="skill-pill">layout parsing</span><span class="skill-pill">chart/table understanding</span><span class="skill-pill">PDF visual extraction</span><span class="skill-pill">multimodal document QA</span><span class="skill-pill">visual evidence</span></div></article>
-          <article class="agent-card"><span class="badge diff">Deploy</span><h3>CV Deployment</h3><div class="tag-row"><span class="skill-pill">ONNX export</span><span class="skill-pill">TensorRT optimization</span><span class="skill-pill">Triton serving</span><span class="skill-pill">batch image inference</span><span class="skill-pill">real-time video inference</span><span class="skill-pill">latency/FPS measurement</span></div></article>
+        <div class="compact-grid">
+          <article class="compact-card"><span class="badge diff">Expansion</span><h3>Vision Foundation Models</h3><div class="tag-row"><span class="skill-pill">ViT</span><span class="skill-pill">DETR concept</span><span class="skill-pill">DINO concept</span><span class="skill-pill">SAM concept</span><span class="skill-pill">YOLO deployment</span></div></article>
+          <article class="compact-card"><span class="badge diff">Expansion</span><h3>Vision-Language Models</h3><div class="tag-row"><span class="skill-pill">CLIP</span><span class="skill-pill">SigLIP</span><span class="skill-pill">BLIP concept</span><span class="skill-pill">VLM prompting</span><span class="skill-pill">visual grounding</span></div></article>
+          <article class="compact-card"><span class="badge diff">Expansion</span><h3>Document / Visual Data AI</h3><div class="tag-row"><span class="skill-pill">OCR</span><span class="skill-pill">layout parsing</span><span class="skill-pill">chart/table understanding</span><span class="skill-pill">multimodal document QA</span><span class="skill-pill">visual evidence</span></div></article>
+          <article class="compact-card"><span class="badge diff">Expansion</span><h3>CV Deployment</h3><div class="tag-row"><span class="skill-pill">ONNX export</span><span class="skill-pill">TensorRT optimization</span><span class="skill-pill">Triton serving</span><span class="skill-pill">real-time video inference</span><span class="skill-pill">latency/FPS measurement</span></div></article>
         </div>
       </div>
     </section>
@@ -1511,17 +1991,120 @@
           <h2 id="projectsTitle">Ten projects that prove the roadmap</h2>
           <p class="muted">Each project should produce a GitHub README with architecture, benchmark evidence, traces, and a clear NVIDIA relevance note.</p>
         </div>
-        <div class="project-ladder">
-          <article class="project-card"><span class="month-label">Month 1</span><span class="project-index">Project 1</span><h3>Enterprise RAG System</h3><ul class="project-detail-list"><li><strong>Goal:</strong> Build a production-style RAG app for enterprise documents.</li><li><strong>Tech stack:</strong> FastAPI, vector DB, reranker, eval set, logs, citations.</li><li><strong>Definition of done:</strong> Citations, recall@k, MRR, latency report, failure cases.</li><li><strong>NVIDIA relevance:</strong> Enterprise GenAI and retriever-style patterns.</li></ul></article>
-          <article class="project-card"><span class="month-label">Month 1</span><span class="project-index">Project 2</span><h3>Agentic RAG Assistant</h3><ul class="project-detail-list"><li><strong>Goal:</strong> Upgrade RAG into a tool-using agent that can search, open, summarize, verify, and answer with evidence.</li><li><strong>Tech stack:</strong> planner-executor, vector DB, reranker, tool registry, trace logs.</li><li><strong>Definition of done:</strong> Agent trajectory logs, tool-call accuracy, grounded answers, failure analysis.</li><li><strong>NVIDIA relevance:</strong> AI-Q-style enterprise agent workflow.</li></ul></article>
-          <article class="project-card"><span class="month-label">Month 2</span><span class="project-index">Project 3</span><h3>vLLM Inference Benchmark</h3><ul class="project-detail-list"><li><strong>Goal:</strong> Benchmark self-hosted LLM serving.</li><li><strong>Tech stack:</strong> vLLM, OpenAI-compatible API, benchmark script.</li><li><strong>Definition of done:</strong> TTFT, TPOT, tokens/sec, concurrency test, GPU memory report.</li><li><strong>NVIDIA relevance:</strong> GPU-aware inference and cost-per-token thinking.</li></ul></article>
-          <article class="project-card"><span class="month-label">Month 2</span><span class="project-index">Project 4</span><h3>Mini NIM-like AI Service</h3><ul class="project-detail-list"><li><strong>Goal:</strong> Package an AI model or agent behind a clean deployable service API.</li><li><strong>Tech stack:</strong> FastAPI, Docker, model server, health checks, metrics endpoint, config.</li><li><strong>Definition of done:</strong> Streaming, health check, logs, rate limit, API docs.</li><li><strong>NVIDIA relevance:</strong> NIM-style deployable inference service concept.</li></ul></article>
-          <article class="project-card"><span class="month-label">Month 3</span><span class="project-index">Project 5</span><h3>Mini AI Factory</h3><ul class="project-detail-list"><li><strong>Goal:</strong> Integrate RAG, agent workflow, model serving, evaluation, and monitoring into one platform.</li><li><strong>Tech stack:</strong> API gateway, model service, retrieval service, agent service, evaluation service, dashboard.</li><li><strong>Definition of done:</strong> Service architecture diagram, runbook, logs, dashboard, benchmark report.</li><li><strong>NVIDIA relevance:</strong> AI Factory / GenAI platform thinking.</li></ul></article>
-          <article class="project-card"><span class="month-label">Month 3</span><span class="project-index">Project 6</span><h3>Multi-Agent Workflow Demo</h3><ul class="project-detail-list"><li><strong>Goal:</strong> Build a supervisor-worker agent system for report generation, document QA, or codebase analysis.</li><li><strong>Tech stack:</strong> supervisor agent, retriever agent, verifier agent, writer agent, tool-call logs.</li><li><strong>Definition of done:</strong> Task success metric, step-by-step traces, human approval point, cost/latency report.</li><li><strong>NVIDIA relevance:</strong> Agentic AI and orchestration.</li></ul></article>
-          <article class="project-card"><span class="month-label">Month 4+</span><span class="project-index">Project 7</span><h3>Multimodal Agentic RAG</h3><ul class="project-detail-list"><li><strong>Goal:</strong> Add image/document/video understanding to an agentic retrieval system.</li><li><strong>Tech stack:</strong> CLIP/SigLIP, OCR, VLM prompting, vector search, document parser, video frame retrieval.</li><li><strong>Definition of done:</strong> Top-k visual retrieval, grounded answers, visual evidence, agent traces, error analysis.</li><li><strong>NVIDIA relevance:</strong> Multimodal enterprise AI and visual AI agents.</li></ul></article>
-          <article class="project-card"><span class="month-label">Month 4+</span><span class="project-index">Project 8</span><h3>Physical AI / Synthetic Data Preview</h3><ul class="project-detail-list"><li><strong>Goal:</strong> Show awareness of simulation, synthetic data, and 3D perception direction without overclaiming robotics depth.</li><li><strong>Tech stack:</strong> image/video dataset, 3D perception notes, synthetic data summary, Isaac/Cosmos concept map.</li><li><strong>Definition of done:</strong> Small demo or technical write-up plus future extension plan.</li><li><strong>NVIDIA relevance:</strong> Physical AI readiness through Cosmos/Isaac/3D perception awareness.</li></ul></article>
-          <article class="project-card"><span class="month-label">Month 4+ Strategic Expansion</span><span class="project-index">Project 9</span><h3>Generative Models / Diffusion Playground</h3><ul class="project-detail-list"><li><strong>Goal:</strong> Build a technical demo or study page explaining image generation and diffusion workflows.</li><li><strong>Tech stack:</strong> Stable Diffusion or FLUX-style model concept, prompt-to-image, image editing, ControlNet concept, latency/memory notes.</li><li><strong>Definition of done:</strong> Generated examples, prompt comparisons, limitations, evaluation notes, GPU/memory notes.</li><li><strong>NVIDIA relevance:</strong> Generative AI workloads, diffusion inference, visual design, synthetic data.</li></ul></article>
-          <article class="project-card"><span class="month-label">Month 4+ Strategic Expansion</span><span class="project-index">Project 10</span><h3>Visual Intelligence Demo</h3><ul class="project-detail-list"><li><strong>Goal:</strong> Build a CV/VLM demo for visual retrieval, segmentation, or document-image understanding.</li><li><strong>Tech stack:</strong> CLIP/SigLIP, OCR, SAM concept, VLM prompting, visual retrieval.</li><li><strong>Definition of done:</strong> Top-k retrieval, visual evidence, recall@k, qualitative error analysis.</li><li><strong>NVIDIA relevance:</strong> Vision AI, visual agents, multimodal systems, physical AI perception layer.</li></ul></article>
+        <div class="project-timeline">
+          <section class="project-month" aria-label="Month 1 projects">
+            <div class="project-month-marker"><strong>Month 1</strong><span>Core retrieval and agent foundation</span></div>
+            <div class="project-ladder">
+              <article class="project-card">
+                <div class="project-card-head"><div class="project-meta"><span class="project-sequence">Month 1 · Project 1</span><span class="badge">Core</span></div><h3>Enterprise RAG System</h3></div>
+                <div class="project-detail-list">
+                  <div class="project-detail-row"><span class="project-detail-label">Goal</span><span>Build a production-style RAG app for enterprise documents.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Tech stack</span><div class="tag-row"><span class="skill-pill">FastAPI</span><span class="skill-pill">vector DB</span><span class="skill-pill">reranker</span><span class="skill-pill">eval set</span><span class="skill-pill">logs</span><span class="skill-pill">citations</span></div></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Done when</span><span>Citations, recall@k, MRR, latency report, failure cases.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">NVIDIA relevance</span><span>Enterprise GenAI and retriever-style patterns.</span></div>
+                </div>
+              </article>
+              <article class="project-card">
+                <div class="project-card-head"><div class="project-meta"><span class="project-sequence">Month 1 · Project 2</span><span class="badge">Core</span></div><h3>Agentic RAG Assistant</h3></div>
+                <div class="project-detail-list">
+                  <div class="project-detail-row"><span class="project-detail-label">Goal</span><span>Upgrade RAG into a tool-using agent that can search, open, summarize, verify, and answer with evidence.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Tech stack</span><div class="tag-row"><span class="skill-pill">planner-executor</span><span class="skill-pill">vector DB</span><span class="skill-pill">reranker</span><span class="skill-pill">tool registry</span><span class="skill-pill">trace logs</span></div></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Done when</span><span>Agent trajectory logs, tool-call accuracy, grounded answers, failure analysis.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">NVIDIA relevance</span><span>AI-Q-style enterprise agent workflow.</span></div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="project-month" aria-label="Month 2 projects">
+            <div class="project-month-marker"><strong>Month 2</strong><span>Serving and deployable AI services</span></div>
+            <div class="project-ladder">
+              <article class="project-card">
+                <div class="project-card-head"><div class="project-meta"><span class="project-sequence">Month 2 · Project 3</span><span class="badge core">Core</span></div><h3>vLLM Inference Benchmark</h3></div>
+                <div class="project-detail-list">
+                  <div class="project-detail-row"><span class="project-detail-label">Goal</span><span>Benchmark self-hosted LLM serving.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Tech stack</span><div class="tag-row"><span class="skill-pill">vLLM</span><span class="skill-pill">OpenAI-compatible API</span><span class="skill-pill">benchmark script</span></div></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Done when</span><span>TTFT, TPOT, tokens/sec, concurrency test, GPU memory report.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">NVIDIA relevance</span><span>GPU-aware inference and cost-per-token thinking.</span></div>
+                </div>
+              </article>
+              <article class="project-card">
+                <div class="project-card-head"><div class="project-meta"><span class="project-sequence">Month 2 · Project 4</span><span class="badge core">Core</span></div><h3>Mini NIM-like AI Service</h3></div>
+                <div class="project-detail-list">
+                  <div class="project-detail-row"><span class="project-detail-label">Goal</span><span>Package an AI model or agent behind a clean deployable service API.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Tech stack</span><div class="tag-row"><span class="skill-pill">FastAPI</span><span class="skill-pill">Docker</span><span class="skill-pill">model server</span><span class="skill-pill">health checks</span><span class="skill-pill">metrics endpoint</span><span class="skill-pill">config</span></div></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Done when</span><span>Streaming, health check, logs, rate limit, API docs.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">NVIDIA relevance</span><span>NIM-style deployable inference service concept.</span></div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="project-month" aria-label="Month 3 projects">
+            <div class="project-month-marker"><strong>Month 3</strong><span>Platform integration and orchestration</span></div>
+            <div class="project-ladder">
+              <article class="project-card">
+                <div class="project-card-head"><div class="project-meta"><span class="project-sequence">Month 3 · Project 5</span><span class="badge core">Core</span></div><h3>Mini AI Factory</h3></div>
+                <div class="project-detail-list">
+                  <div class="project-detail-row"><span class="project-detail-label">Goal</span><span>Integrate RAG, agent workflow, model serving, evaluation, and monitoring into one platform.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Tech stack</span><div class="tag-row"><span class="skill-pill">API gateway</span><span class="skill-pill">model service</span><span class="skill-pill">retrieval service</span><span class="skill-pill">agent service</span><span class="skill-pill">evaluation service</span><span class="skill-pill">dashboard</span></div></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Done when</span><span>Service architecture diagram, runbook, logs, dashboard, benchmark report.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">NVIDIA relevance</span><span>AI Factory / GenAI platform thinking.</span></div>
+                </div>
+              </article>
+              <article class="project-card">
+                <div class="project-card-head"><div class="project-meta"><span class="project-sequence">Month 3 · Project 6</span><span class="badge core">Core</span></div><h3>Multi-Agent Workflow Demo</h3></div>
+                <div class="project-detail-list">
+                  <div class="project-detail-row"><span class="project-detail-label">Goal</span><span>Build a supervisor-worker agent system for report generation, document QA, or codebase analysis.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Tech stack</span><div class="tag-row"><span class="skill-pill">supervisor agent</span><span class="skill-pill">retriever agent</span><span class="skill-pill">verifier agent</span><span class="skill-pill">writer agent</span><span class="skill-pill">tool-call logs</span></div></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Done when</span><span>Task success metric, step-by-step traces, human approval point, cost/latency report.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">NVIDIA relevance</span><span>Agentic AI and orchestration.</span></div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="project-month" aria-label="Month 4 strategic expansion projects">
+            <div class="project-month-marker"><strong>Month 4+</strong><span>Strategic Expansion</span></div>
+            <div class="project-ladder">
+              <article class="project-card">
+                <div class="project-card-head"><div class="project-meta"><span class="project-sequence">Month 4+ · Project 7</span><span class="badge diff">Expansion</span></div><h3>Multimodal Agentic RAG</h3></div>
+                <div class="project-detail-list">
+                  <div class="project-detail-row"><span class="project-detail-label">Goal</span><span>Add image/document/video understanding to an agentic retrieval system.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Tech stack</span><div class="tag-row"><span class="skill-pill">CLIP/SigLIP</span><span class="skill-pill">OCR</span><span class="skill-pill">VLM prompting</span><span class="skill-pill">vector search</span><span class="skill-pill">document parser</span><span class="skill-pill">video frame retrieval</span></div></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Done when</span><span>Top-k visual retrieval, grounded answers, visual evidence, agent traces, error analysis.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">NVIDIA relevance</span><span>Multimodal enterprise AI and visual AI agents.</span></div>
+                </div>
+              </article>
+              <article class="project-card">
+                <div class="project-card-head"><div class="project-meta"><span class="project-sequence">Month 4+ · Project 8</span><span class="badge diff">Later</span></div><h3>Physical AI / Synthetic Data Preview</h3></div>
+                <div class="project-detail-list">
+                  <div class="project-detail-row"><span class="project-detail-label">Goal</span><span>Show awareness of simulation, synthetic data, and 3D perception direction without overclaiming robotics depth.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Tech stack</span><div class="tag-row"><span class="skill-pill">image/video dataset</span><span class="skill-pill">3D perception notes</span><span class="skill-pill">synthetic data summary</span><span class="skill-pill">Isaac/Cosmos concept map</span></div></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Done when</span><span>Small demo or technical write-up plus future extension plan.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">NVIDIA relevance</span><span>Physical AI readiness through Cosmos/Isaac/3D perception awareness.</span></div>
+                </div>
+              </article>
+              <article class="project-card">
+                <div class="project-card-head"><div class="project-meta"><span class="project-sequence">Month 4+ · Project 9</span><span class="badge diff">Differentiator</span></div><h3>Generative Models / Diffusion Playground</h3></div>
+                <div class="project-detail-list">
+                  <div class="project-detail-row"><span class="project-detail-label">Goal</span><span>Build a technical demo or study page explaining image generation and diffusion workflows.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Tech stack</span><div class="tag-row"><span class="skill-pill">Stable Diffusion concept</span><span class="skill-pill">FLUX concept</span><span class="skill-pill">prompt-to-image</span><span class="skill-pill">image editing</span><span class="skill-pill">ControlNet concept</span><span class="skill-pill">latency/memory notes</span></div></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Done when</span><span>Generated examples, prompt comparisons, limitations, evaluation notes, GPU/memory notes.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">NVIDIA relevance</span><span>Generative AI workloads, diffusion inference, visual design, synthetic data.</span></div>
+                </div>
+              </article>
+              <article class="project-card">
+                <div class="project-card-head"><div class="project-meta"><span class="project-sequence">Month 4+ · Project 10</span><span class="badge diff">Differentiator</span></div><h3>Visual Intelligence Demo</h3></div>
+                <div class="project-detail-list">
+                  <div class="project-detail-row"><span class="project-detail-label">Goal</span><span>Build a CV/VLM demo for visual retrieval, segmentation, or document-image understanding.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Tech stack</span><div class="tag-row"><span class="skill-pill">CLIP/SigLIP</span><span class="skill-pill">OCR</span><span class="skill-pill">SAM concept</span><span class="skill-pill">VLM prompting</span><span class="skill-pill">visual retrieval</span></div></div>
+                  <div class="project-detail-row"><span class="project-detail-label">Done when</span><span>Top-k retrieval, visual evidence, recall@k, qualitative error analysis.</span></div>
+                  <div class="project-detail-row"><span class="project-detail-label">NVIDIA relevance</span><span>Vision AI, visual agents, multimodal systems, physical AI perception layer.</span></div>
+                </div>
+              </article>
+            </div>
+          </section>
         </div>
       </div>
     </section>
@@ -1559,11 +2142,10 @@
         <div class="replace-points">
           <article class="replace-point"><strong>I can build AI products, not only demos.</strong><p class="muted">RAG, citations, APIs, evaluation, and production-facing workflows.</p></article>
           <article class="replace-point"><strong>I understand agents, tools, state, evaluation, and observability.</strong><p class="muted">Tool-calling agents with traces, memory, safety gates, and measurable success.</p></article>
-          <article class="replace-point"><strong>I understand generative models, diffusion, vision models, and multimodal workflows.</strong><p class="muted">LLMs, image/video/3D generation, VFM, CV and VLM systems.</p></article>
           <article class="replace-point"><strong>I understand inference cost, latency, GPU memory, and deployment trade-offs.</strong><p class="muted">Benchmarks, vLLM serving, concurrency, quantization, and cost per task.</p></article>
-          <article class="replace-point"><strong>I can connect LLM systems with CV, VLM, image/video generation, and synthetic data.</strong><p class="muted">This creates a bridge from GenAI products to visual intelligence and physical AI readiness.</p></article>
-          <article class="replace-point"><strong>I understand NVIDIA’s direction.</strong><p class="muted">Enterprise AI, agentic AI, inference platforms, generative models, visual AI agents, AI factories, and physical AI.</p></article>
-          <article class="replace-point"><strong>I can show proof through projects, benchmarks, traces, generated examples, vision demos, and system diagrams.</strong><p class="muted">Portfolio evidence replaces vague claims with inspectable artifacts.</p></article>
+          <article class="replace-point"><strong>I can connect GenAI systems with multimodal and visual intelligence.</strong><p class="muted">LLMs, VLMs, image/video generation, visual evidence, and synthetic data fit into one systems story.</p></article>
+          <article class="replace-point"><strong>I understand NVIDIA’s direction: AI factories, agentic AI, inference platforms, and physical AI.</strong><p class="muted">The roadmap connects enterprise AI, efficient serving, platform design, and future physical AI literacy.</p></article>
+          <article class="replace-point"><strong>I can prove it through projects, benchmarks, traces, diagrams, and demos.</strong><p class="muted">Portfolio evidence replaces vague claims with inspectable artifacts.</p></article>
         </div>
       </div>
     </section>
@@ -1614,11 +2196,11 @@
           <h2 id="rolesTitle">Apply by timeline, not by wish list</h2>
         </div>
         <div class="roles-grid">
-          <article class="card role-card"><span class="badge">Apply Now</span><h3>Current-fit roles</h3><ul class="clean-list"><li>AI Engineer</li><li>GenAI Engineer</li><li>LLM Engineer</li><li>Applied AI Engineer</li></ul></article>
-          <article class="card role-card"><span class="badge core">Apply After 2-3 Months</span><h3>Platform-fit roles</h3><ul class="clean-list"><li>Agentic AI Engineer</li><li>AI Platform Engineer</li><li>LLM Inference Engineer</li><li>Machine Learning Engineer, GenAI Platform</li></ul></article>
-          <article class="card role-card"><span class="badge diff">Strategic Expansion / Differentiator</span><h3>Multimodal and generative roles</h3><ul class="clean-list"><li>Vision/Multimodal AI Engineer</li><li>Generative AI Engineer</li><li>Visual AI Agent Engineer</li><li>Computer Vision Engineer</li></ul></article>
-          <article class="card role-card"><span class="badge core">Long-Term NVIDIA-Aligned</span><h3>Systems roles</h3><ul class="clean-list"><li>AI Systems Engineer</li><li>Agentic AI Systems Engineer</li><li>GPU Inference Engineer</li><li>AI Infrastructure Engineer</li><li>Enterprise AI Platform Engineer</li><li>Physical AI Engineer</li></ul></article>
-          <article class="card role-card avoid"><span class="badge later">Avoid For Now</span><h3>Low-fit roles</h3><ul class="clean-list"><li>Speech AI Engineer</li><li>Research Scientist</li><li>AI Researcher</li><li>Embedded/Firmware Engineer</li><li>CUDA Compiler Engineer</li><li>Data Analyst</li></ul></article>
+          <article class="card role-card"><span class="badge">Apply Now</span><h3>Current-fit roles</h3><div class="role-pills"><span class="role-pill">AI Engineer</span><span class="role-pill">GenAI Engineer</span><span class="role-pill">LLM Engineer</span><span class="role-pill">Applied AI Engineer</span></div></article>
+          <article class="card role-card"><span class="badge core">Apply After 2-3 Months</span><h3>Platform-fit roles</h3><div class="role-pills"><span class="role-pill">Agentic AI Engineer</span><span class="role-pill">AI Platform Engineer</span><span class="role-pill">LLM Inference Engineer</span><span class="role-pill">Machine Learning Engineer, GenAI Platform</span></div></article>
+          <article class="card role-card"><span class="badge diff">Strategic Expansion / Differentiator</span><h3>Multimodal and generative roles</h3><div class="role-pills"><span class="role-pill">Vision/Multimodal AI Engineer</span><span class="role-pill">Generative AI Engineer</span><span class="role-pill">Visual AI Agent Engineer</span><span class="role-pill">Computer Vision Engineer</span></div></article>
+          <article class="card role-card"><span class="badge core">Long-Term NVIDIA-Aligned</span><h3>Systems roles</h3><div class="role-pills"><span class="role-pill">AI Systems Engineer</span><span class="role-pill">Agentic AI Systems Engineer</span><span class="role-pill">GPU Inference Engineer</span><span class="role-pill">AI Infrastructure Engineer</span><span class="role-pill">Enterprise AI Platform Engineer</span><span class="role-pill">Physical AI Engineer</span></div></article>
+          <article class="card role-card avoid"><span class="badge later">Avoid For Now</span><h3>Low-fit roles</h3><div class="role-pills"><span class="role-pill">Speech AI Engineer</span><span class="role-pill">Research Scientist</span><span class="role-pill">AI Researcher</span><span class="role-pill">Embedded/Firmware Engineer</span><span class="role-pill">CUDA Compiler Engineer</span><span class="role-pill">Data Analyst</span></div></article>
         </div>
       </div>
     </section>
@@ -1632,12 +2214,14 @@
             <h2 id="pitchTitle">AI Systems Engineer focused on agentic GenAI platforms, LLM/GPU inference, and NVIDIA-ready AI systems.</h2>
           </div>
           <div class="pitch-grid">
-            <div>
-              <h3>Copy-ready pitch</h3>
+            <div class="copy-block">
+              <strong>Headline</strong>
+              <h3>AI Systems Engineer focused on agentic GenAI platforms, LLM/GPU inference, and NVIDIA-ready AI systems.</h3>
+              <strong>Short pitch</strong>
               <p class="muted">I build production-style LLM/RAG systems with retrieval, reranking, evaluation, streaming generation, and observability. I am expanding this foundation into agentic AI systems with tool calling, planner-executor workflows, state management, agent evaluation, and traceable execution. My main technical direction is LLM serving, GPU-aware inference, and AI Factory-style platform design. I also maintain strategic literacy in generative models, diffusion, visual intelligence, multimodal agents, synthetic data, and physical AI readiness, not as the main path, but as differentiators for NVIDIA-aligned systems.</p>
             </div>
-            <div>
-              <h3>Copy-ready CV bullets</h3>
+            <div class="copy-block">
+              <strong>CV bullets</strong>
               <ul class="clean-list">
                 <li>Built production-style RAG pipeline with document ingestion, vector retrieval, reranking, citations, evaluation, and observability.</li>
                 <li>Designed tool-using agent workflow with planner-executor structure, tool-call logs, state tracking, and grounded answer verification.</li>
