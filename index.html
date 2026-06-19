@@ -502,6 +502,45 @@
       gap: 14px;
     }
 
+    .direction-shell {
+      border: 1px solid rgba(118, 185, 0, 0.34);
+      border-radius: var(--radius);
+      padding: 18px;
+      background:
+        linear-gradient(135deg, rgba(118, 185, 0, 0.1), rgba(56, 189, 248, 0.045)),
+        rgba(11, 18, 32, 0.6);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .direction-shell::before {
+      display: block;
+      height: 4px;
+      margin: -18px -18px 18px;
+      background: linear-gradient(90deg, var(--accent), rgba(56, 189, 248, 0.8), rgba(167, 139, 250, 0.72));
+      content: "";
+    }
+
+    .direction-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(260px, 0.28fr);
+      gap: 16px;
+      align-items: stretch;
+      margin-bottom: 16px;
+    }
+
+    .direction-intro-card {
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 7px;
+      padding: 18px;
+      background: rgba(15, 23, 42, 0.55);
+    }
+
+    .direction-intro-card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
     .direction-card {
       display: grid;
       gap: 14px;
@@ -676,6 +715,37 @@
       text-transform: uppercase;
     }
 
+    .month-label {
+      display: inline-flex;
+      width: fit-content;
+      border: 1px solid rgba(56, 189, 248, 0.42);
+      border-radius: 999px;
+      padding: 4px 9px;
+      color: var(--blue);
+      background: rgba(56, 189, 248, 0.1);
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .project-detail-list {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .project-detail-list li {
+      border-top: 1px solid rgba(148, 163, 184, 0.11);
+      padding-top: 9px;
+      color: var(--muted);
+    }
+
+    .project-detail-list strong {
+      color: var(--text);
+    }
+
     .matrix-toolbar {
       display: flex;
       justify-content: space-between;
@@ -722,6 +792,41 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
+    }
+
+    .replace-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .replace-card {
+      display: grid;
+      gap: 16px;
+      border: 1px solid rgba(118, 185, 0, 0.28);
+      border-radius: var(--radius);
+      padding: 24px;
+      background: rgba(24, 34, 53, 0.92);
+      box-shadow: 0 14px 48px rgba(0, 0, 0, 0.16);
+    }
+
+    .replace-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .replace-point {
+      border: 1px solid rgba(148, 163, 184, 0.13);
+      border-radius: 7px;
+      padding: 15px;
+      background: rgba(15, 23, 42, 0.5);
+    }
+
+    .replace-point strong {
+      display: block;
+      margin-bottom: 6px;
     }
 
     .cap-card {
@@ -848,6 +953,7 @@
 
     @media (max-width: 1120px) {
       .direction-grid,
+      .direction-intro,
       .route-ribbon,
       .branch-grid,
       .matrix-grid,
@@ -858,6 +964,7 @@
 
       .project-ladder,
       .capability-grid,
+      .replace-grid,
       .signal-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -905,6 +1012,7 @@
       .hero-grid,
       .current-grid,
       .timeline-grid,
+      .replace-points,
       .pitch-grid {
         grid-template-columns: 1fr;
       }
@@ -932,11 +1040,13 @@
       }
 
       .direction-grid,
+      .direction-intro,
       .route-ribbon,
       .branch-grid,
       .project-ladder,
       .matrix-grid,
       .capability-grid,
+      .replace-grid,
       .proof-grid,
       .roles-grid,
       .signal-grid {
@@ -989,6 +1099,7 @@
         <a class="nav-link" href="#branches">Branches</a>
         <a class="nav-link" href="#projects">Projects</a>
         <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#hard-to-replace">Why</a>
         <a class="nav-link" href="#capabilities">Capabilities</a>
         <a class="nav-link" href="#roles">Roles</a>
       </div>
@@ -1075,37 +1186,49 @@
           <h2 id="directionTitle">Five strategic directions to aim at</h2>
           <p class="muted">These areas connect practical GenAI engineering with the kind of future-facing AI systems work NVIDIA and similar AI platform companies care about.</p>
         </div>
-        <div class="direction-grid">
-          <article class="direction-card">
-            <span class="direction-number">1</span>
-            <h3>Enterprise GenAI</h3>
-            <p>Build grounded enterprise AI workflows, not only chatbot demos.</p>
-            <div class="tag-row"><span class="skill-pill">NIM concept</span><span class="skill-pill">AI Enterprise concept</span><span class="skill-pill">RAG</span><span class="skill-pill">agents</span><span class="skill-pill">NeMo concept</span><span class="skill-pill">evaluation</span><span class="skill-pill">observability</span><span class="skill-pill">enterprise data</span></div>
-          </article>
-          <article class="direction-card">
-            <span class="direction-number">2</span>
-            <h3>AI Inference Platform</h3>
-            <p>Understand how models become efficient production services.</p>
-            <div class="tag-row"><span class="skill-pill">vLLM</span><span class="skill-pill">SGLang concept</span><span class="skill-pill">TensorRT-LLM concept</span><span class="skill-pill">Triton</span><span class="skill-pill">Dynamo concept</span><span class="skill-pill">KV cache</span><span class="skill-pill">batching</span><span class="skill-pill">cost per token</span><span class="skill-pill">latency/throughput</span></div>
-          </article>
-          <article class="direction-card">
-            <span class="direction-number">3</span>
-            <h3>AI Data Platform</h3>
-            <p>Treat data freshness, privacy, and retrieval quality as system concerns.</p>
-            <div class="tag-row"><span class="skill-pill">multimodal ingestion</span><span class="skill-pill">vector search</span><span class="skill-pill">retrieval</span><span class="skill-pill">data freshness</span><span class="skill-pill">enterprise data</span><span class="skill-pill">metadata filtering</span><span class="skill-pill">data privacy</span></div>
-          </article>
-          <article class="direction-card">
-            <span class="direction-number">4</span>
-            <h3>Vision & Multimodal AI</h3>
-            <p>Use vision-language systems as the bridge beyond text-only GenAI.</p>
-            <div class="tag-row"><span class="skill-pill">CLIP</span><span class="skill-pill">SigLIP</span><span class="skill-pill">VLM</span><span class="skill-pill">OCR</span><span class="skill-pill">video understanding</span><span class="skill-pill">vision AI agents</span><span class="skill-pill">multimodal RAG</span></div>
-          </article>
-          <article class="direction-card">
-            <span class="direction-number">5</span>
-            <h3>Physical AI Readiness</h3>
-            <p>Build strategic literacy for simulation, synthetic data, and embodied AI systems.</p>
-            <div class="tag-row"><span class="skill-pill">Cosmos concept</span><span class="skill-pill">Isaac Sim concept</span><span class="skill-pill">synthetic data</span><span class="skill-pill">simulation</span><span class="skill-pill">robotics/autonomous awareness</span><span class="skill-pill">3D perception</span></div>
-          </article>
+        <div class="direction-shell">
+          <div class="direction-intro">
+            <div class="direction-intro-card">
+              <strong>Signature system map</strong>
+              <p class="muted">This is the north star of the page: a path from current RAG production work into the systems areas that make an AI engineer more valuable in NVIDIA-style platform teams.</p>
+            </div>
+            <div class="direction-intro-card">
+              <strong>Priority logic</strong>
+              <p class="muted">Start with enterprise GenAI and inference. Use multimodal and physical AI readiness as differentiators after the core system spine is visible.</p>
+            </div>
+          </div>
+          <div class="direction-grid">
+            <article class="direction-card">
+              <span class="direction-number">1</span>
+              <h3>Enterprise GenAI</h3>
+              <p>Build grounded enterprise AI workflows, not only chatbot demos.</p>
+              <div class="tag-row"><span class="skill-pill">NIM concept</span><span class="skill-pill">AI Enterprise concept</span><span class="skill-pill">RAG</span><span class="skill-pill">agents</span><span class="skill-pill">NeMo concept</span><span class="skill-pill">evaluation</span><span class="skill-pill">observability</span><span class="skill-pill">enterprise data</span></div>
+            </article>
+            <article class="direction-card">
+              <span class="direction-number">2</span>
+              <h3>AI Inference Platform</h3>
+              <p>Understand how models become efficient production services.</p>
+              <div class="tag-row"><span class="skill-pill">vLLM</span><span class="skill-pill">SGLang concept</span><span class="skill-pill">TensorRT-LLM concept</span><span class="skill-pill">Triton</span><span class="skill-pill">Dynamo concept</span><span class="skill-pill">KV cache</span><span class="skill-pill">batching</span><span class="skill-pill">cost per token</span><span class="skill-pill">latency/throughput</span></div>
+            </article>
+            <article class="direction-card">
+              <span class="direction-number">3</span>
+              <h3>AI Data Platform</h3>
+              <p>Treat data freshness, privacy, and retrieval quality as system concerns.</p>
+              <div class="tag-row"><span class="skill-pill">multimodal ingestion</span><span class="skill-pill">vector search</span><span class="skill-pill">retrieval</span><span class="skill-pill">data freshness</span><span class="skill-pill">enterprise data</span><span class="skill-pill">metadata filtering</span><span class="skill-pill">data privacy</span></div>
+            </article>
+            <article class="direction-card">
+              <span class="direction-number">4</span>
+              <h3>Vision & Multimodal AI</h3>
+              <p>Use vision-language systems as the bridge beyond text-only GenAI.</p>
+              <div class="tag-row"><span class="skill-pill">CLIP</span><span class="skill-pill">SigLIP</span><span class="skill-pill">VLM</span><span class="skill-pill">OCR</span><span class="skill-pill">video understanding</span><span class="skill-pill">vision AI agents</span><span class="skill-pill">multimodal RAG</span></div>
+            </article>
+            <article class="direction-card">
+              <span class="direction-number">5</span>
+              <h3>Physical AI Readiness</h3>
+              <p>Build strategic literacy for simulation, synthetic data, and embodied AI systems.</p>
+              <div class="tag-row"><span class="skill-pill">Cosmos concept</span><span class="skill-pill">Isaac Sim concept</span><span class="skill-pill">synthetic data</span><span class="skill-pill">simulation</span><span class="skill-pill">robotics/autonomous awareness</span><span class="skill-pill">3D perception</span></div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1228,12 +1351,78 @@
           <p class="muted">Each project should produce a GitHub README with architecture, benchmark evidence, and a clear NVIDIA relevance note.</p>
         </div>
         <div class="project-ladder">
-          <article class="project-card"><span class="project-index">Project 1</span><h3>Enterprise RAG System</h3><p class="muted"><strong>Goal:</strong> Build a production-style RAG app for enterprise documents.</p><p class="muted"><strong>Tech stack:</strong> FastAPI, vector DB, reranker, eval set, logs.</p><p class="muted"><strong>Definition of done:</strong> Citations, recall@k, latency report, failure cases.</p><p class="muted"><strong>README:</strong> Architecture diagram, eval table, sample queries.</p><p class="muted"><strong>NVIDIA relevance:</strong> Enterprise GenAI and Retriever-style patterns.</p></article>
-          <article class="project-card"><span class="project-index">Project 2</span><h3>vLLM Inference Benchmark</h3><p class="muted"><strong>Goal:</strong> Benchmark self-hosted LLM serving.</p><p class="muted"><strong>Tech stack:</strong> vLLM, OpenAI-compatible API, benchmark script.</p><p class="muted"><strong>Definition of done:</strong> TTFT, TPOT, tokens/sec, memory report.</p><p class="muted"><strong>README:</strong> Hardware config, commands, benchmark chart.</p><p class="muted"><strong>NVIDIA relevance:</strong> GPU-aware inference and cost per token thinking.</p></article>
-          <article class="project-card"><span class="project-index">Project 3</span><h3>Mini NIM-like AI Service</h3><p class="muted"><strong>Goal:</strong> Package an AI model behind a clean service API.</p><p class="muted"><strong>Tech stack:</strong> FastAPI, Docker, model server, metrics endpoint.</p><p class="muted"><strong>Definition of done:</strong> Health checks, streaming, config, logs.</p><p class="muted"><strong>README:</strong> API contract, container runbook, service diagram.</p><p class="muted"><strong>NVIDIA relevance:</strong> NIM-style deployable inference service concept.</p></article>
-          <article class="project-card"><span class="project-index">Project 4</span><h3>Multimodal Agentic RAG</h3><p class="muted"><strong>Goal:</strong> Add image/document understanding to agentic retrieval.</p><p class="muted"><strong>Tech stack:</strong> CLIP/SigLIP, OCR, VLM prompting, vector search.</p><p class="muted"><strong>Definition of done:</strong> Top-k visual retrieval, grounded answers, examples.</p><p class="muted"><strong>README:</strong> Visual demos, retrieval metrics, limitations.</p><p class="muted"><strong>NVIDIA relevance:</strong> Multimodal enterprise AI and vision AI agents.</p></article>
-          <article class="project-card"><span class="project-index">Project 5</span><h3>Triton/TensorRT Deployment Demo</h3><p class="muted"><strong>Goal:</strong> Deploy one model through an optimized inference path.</p><p class="muted"><strong>Tech stack:</strong> ONNX, Triton, TensorRT basics, batching notes.</p><p class="muted"><strong>Definition of done:</strong> Before/after latency and memory comparison.</p><p class="muted"><strong>README:</strong> Model config, commands, latency table.</p><p class="muted"><strong>NVIDIA relevance:</strong> Direct inference platform alignment.</p></article>
-          <article class="project-card"><span class="project-index">Project 6</span><h3>Vision AI / Physical AI Preview</h3><p class="muted"><strong>Goal:</strong> Show awareness of simulation, synthetic data, and 3D perception direction.</p><p class="muted"><strong>Tech stack:</strong> image/video dataset, 3D perception notes, synthetic data summary.</p><p class="muted"><strong>Definition of done:</strong> Small demo plus system design write-up.</p><p class="muted"><strong>README:</strong> Physical AI concept map and future extension plan.</p><p class="muted"><strong>NVIDIA relevance:</strong> Cosmos/Isaac Sim awareness without overclaiming robotics depth.</p></article>
+          <article class="project-card">
+            <span class="month-label">Month 1</span>
+            <span class="project-index">Project 1</span>
+            <h3>Enterprise RAG System</h3>
+            <ul class="project-detail-list">
+              <li><strong>Goal:</strong> Build a production-style RAG app for enterprise documents.</li>
+              <li><strong>Tech stack:</strong> FastAPI, vector DB, reranker, eval set, logs.</li>
+              <li><strong>Definition of done:</strong> Citations, recall@k, latency report, failure cases.</li>
+              <li><strong>README:</strong> Architecture diagram, eval table, sample queries.</li>
+              <li><strong>NVIDIA relevance:</strong> Enterprise GenAI and Retriever-style patterns.</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <span class="month-label">Month 2</span>
+            <span class="project-index">Project 2</span>
+            <h3>vLLM Inference Benchmark</h3>
+            <ul class="project-detail-list">
+              <li><strong>Goal:</strong> Benchmark self-hosted LLM serving.</li>
+              <li><strong>Tech stack:</strong> vLLM, OpenAI-compatible API, benchmark script.</li>
+              <li><strong>Definition of done:</strong> TTFT, TPOT, tokens/sec, memory report.</li>
+              <li><strong>README:</strong> Hardware config, commands, benchmark chart.</li>
+              <li><strong>NVIDIA relevance:</strong> GPU-aware inference and cost per token thinking.</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <span class="month-label">Month 2</span>
+            <span class="project-index">Project 3</span>
+            <h3>Mini NIM-like AI Service</h3>
+            <ul class="project-detail-list">
+              <li><strong>Goal:</strong> Package an AI model behind a clean service API.</li>
+              <li><strong>Tech stack:</strong> FastAPI, Docker, model server, metrics endpoint.</li>
+              <li><strong>Definition of done:</strong> Health checks, streaming, config, logs.</li>
+              <li><strong>README:</strong> API contract, container runbook, service diagram.</li>
+              <li><strong>NVIDIA relevance:</strong> NIM-style deployable inference service concept.</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <span class="month-label">Month 3</span>
+            <span class="project-index">Project 4</span>
+            <h3>Multimodal Agentic RAG</h3>
+            <ul class="project-detail-list">
+              <li><strong>Goal:</strong> Add image/document understanding to agentic retrieval.</li>
+              <li><strong>Tech stack:</strong> CLIP/SigLIP, OCR, VLM prompting, vector search.</li>
+              <li><strong>Definition of done:</strong> Top-k visual retrieval, grounded answers, examples.</li>
+              <li><strong>README:</strong> Visual demos, retrieval metrics, limitations.</li>
+              <li><strong>NVIDIA relevance:</strong> Multimodal enterprise AI and vision AI agents.</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <span class="month-label">Month 4+</span>
+            <span class="project-index">Project 5</span>
+            <h3>Triton/TensorRT Deployment Demo</h3>
+            <ul class="project-detail-list">
+              <li><strong>Goal:</strong> Deploy one model through an optimized inference path.</li>
+              <li><strong>Tech stack:</strong> ONNX, Triton, TensorRT basics, batching notes.</li>
+              <li><strong>Definition of done:</strong> Before/after latency and memory comparison.</li>
+              <li><strong>README:</strong> Model config, commands, latency table.</li>
+              <li><strong>NVIDIA relevance:</strong> Direct inference platform alignment.</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <span class="month-label">Month 4+</span>
+            <span class="project-index">Project 6</span>
+            <h3>Vision AI / Physical AI Preview</h3>
+            <ul class="project-detail-list">
+              <li><strong>Goal:</strong> Show awareness of simulation, synthetic data, and 3D perception direction.</li>
+              <li><strong>Tech stack:</strong> image/video dataset, 3D perception notes, synthetic data summary.</li>
+              <li><strong>Definition of done:</strong> Small demo plus system design write-up.</li>
+              <li><strong>README:</strong> Physical AI concept map and future extension plan.</li>
+              <li><strong>NVIDIA relevance:</strong> Cosmos/Isaac Sim awareness without overclaiming robotics depth.</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -1259,8 +1448,32 @@
       </div>
     </section>
 
+    <!-- Why This Path Makes Me Hard to Replace -->
+    <section class="section alt" id="hard-to-replace" aria-labelledby="replaceTitle">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Career Moat</p>
+          <h2 id="replaceTitle">Why This Path Makes Me Hard to Replace</h2>
+          <p class="muted">The value is the combination: production GenAI, inference awareness, platform reliability, and multimodal direction in one engineering profile.</p>
+        </div>
+        <div class="replace-grid">
+          <article class="replace-card">
+            <span class="badge">Systems combination</span>
+            <h3>Most candidates stop at one layer</h3>
+            <p class="muted">A flat AI checklist is easy to copy. This path is harder to replace because it connects user-facing GenAI products with model serving, evaluation, data quality, observability, and future multimodal systems.</p>
+          </article>
+          <div class="replace-points">
+            <article class="replace-point"><strong>Product layer</strong><p class="muted">RAG, agents, citations, document workflows.</p></article>
+            <article class="replace-point"><strong>Serving layer</strong><p class="muted">vLLM, streaming, GPU memory, latency and throughput.</p></article>
+            <article class="replace-point"><strong>Platform layer</strong><p class="muted">APIs, Docker, metrics, logs, deployment runbooks.</p></article>
+            <article class="replace-point"><strong>Future layer</strong><p class="muted">Multimodal AI, vision systems, physical AI readiness.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- NVIDIA-Ready Capability Map -->
-    <section class="section alt" id="capabilities" aria-labelledby="capabilityTitle">
+    <section class="section" id="capabilities" aria-labelledby="capabilityTitle">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">NVIDIA-Ready Capability Map</p>
