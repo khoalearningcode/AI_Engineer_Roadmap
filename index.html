@@ -3,25 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AI Engineer Roadmap: from LLM/RAG chatbot production to GenAI Platform, LLM Inference, and Multimodal AI Engineering." />
+  <meta name="description" content="AI Engineer Roadmap: a practical career path from LLM/RAG work to production RAG, LLM serving, GenAI platform, and specialization branches." />
   <title>AI Engineer Roadmap</title>
   <style>
     :root {
       --bg: #0f172a;
-      --bg-soft: #111827;
-      --card: #182235;
-      --card-2: #1e293b;
-      --line: rgba(148, 163, 184, 0.22);
+      --bg-2: #111827;
+      --panel: #182235;
+      --panel-2: #1e293b;
+      --panel-3: #121b2c;
       --text: #e5e7eb;
       --muted: #94a3b8;
+      --line: rgba(148, 163, 184, 0.18);
+      --line-strong: rgba(148, 163, 184, 0.32);
       --accent: #76B900;
       --accent-soft: rgba(118, 185, 0, 0.14);
-      --cyan: #38bdf8;
+      --blue: #38bdf8;
       --amber: #f59e0b;
-      --danger: #f87171;
-      --shadow: 0 20px 70px rgba(0, 0, 0, 0.3);
+      --red: #f87171;
+      --max: 1180px;
       --radius: 8px;
-      --max-width: 1180px;
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.24);
     }
 
     * {
@@ -36,12 +38,12 @@
       margin: 0;
       color: var(--text);
       background:
-        linear-gradient(180deg, rgba(17, 24, 39, 0.88), rgba(15, 23, 42, 0.96)),
-        repeating-linear-gradient(90deg, rgba(148, 163, 184, 0.055) 0 1px, transparent 1px 96px),
-        repeating-linear-gradient(0deg, rgba(148, 163, 184, 0.045) 0 1px, transparent 1px 96px),
+        linear-gradient(180deg, rgba(17, 24, 39, 0.94), rgba(15, 23, 42, 0.98)),
+        repeating-linear-gradient(90deg, rgba(148, 163, 184, 0.045) 0 1px, transparent 1px 112px),
+        repeating-linear-gradient(0deg, rgba(148, 163, 184, 0.035) 0 1px, transparent 1px 112px),
         var(--bg);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
+      line-height: 1.55;
     }
 
     body.no-scroll {
@@ -58,7 +60,7 @@
       font: inherit;
     }
 
-    .progress-bar {
+    .scroll-progress {
       position: fixed;
       inset: 0 auto auto 0;
       z-index: 100;
@@ -72,37 +74,36 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.16);
-      background: rgba(15, 23, 42, 0.86);
-      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(16px);
     }
 
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      max-width: var(--max-width);
-      min-height: 72px;
+      max-width: var(--max);
+      min-height: 70px;
       margin: 0 auto;
       padding: 0 24px;
       gap: 20px;
     }
 
-    .logo {
+    .brand {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-weight: 800;
-      letter-spacing: 0;
+      font-weight: 850;
       white-space: nowrap;
     }
 
-    .logo-mark {
+    .brand-mark {
       display: grid;
-      width: 32px;
-      height: 32px;
+      width: 34px;
+      height: 34px;
       place-items: center;
-      border: 1px solid rgba(118, 185, 0, 0.45);
+      border: 1px solid rgba(118, 185, 0, 0.55);
       border-radius: 7px;
       color: var(--accent);
       background: var(--accent-soft);
@@ -119,7 +120,7 @@
 
     .nav-link {
       border-radius: 6px;
-      padding: 9px 12px;
+      padding: 9px 11px;
       color: var(--muted);
       font-size: 14px;
       transition: color 180ms ease, background 180ms ease;
@@ -137,10 +138,10 @@
       display: none;
       width: 42px;
       height: 42px;
-      border: 1px solid rgba(148, 163, 184, 0.22);
+      border: 1px solid var(--line-strong);
       border-radius: 7px;
       color: var(--text);
-      background: rgba(30, 41, 59, 0.88);
+      background: rgba(30, 41, 59, 0.9);
       cursor: pointer;
     }
 
@@ -152,25 +153,21 @@
       background: currentColor;
     }
 
-    main {
-      overflow: hidden;
-    }
-
     .section {
       padding: 88px 24px;
     }
 
     .section.alt {
-      background: rgba(17, 24, 39, 0.42);
       border-block: 1px solid rgba(148, 163, 184, 0.1);
+      background: rgba(17, 24, 39, 0.44);
     }
 
     .container {
-      max-width: var(--max-width);
+      max-width: var(--max);
       margin: 0 auto;
     }
 
-    .section-heading {
+    .section-head {
       display: grid;
       gap: 12px;
       max-width: 780px;
@@ -180,7 +177,7 @@
     .eyebrow {
       color: var(--accent);
       font-size: 13px;
-      font-weight: 800;
+      font-weight: 850;
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
@@ -193,15 +190,15 @@
     }
 
     h1 {
-      max-width: 920px;
-      font-size: clamp(42px, 7vw, 86px);
-      line-height: 0.96;
+      max-width: 930px;
+      font-size: clamp(42px, 7vw, 84px);
+      line-height: 0.98;
       letter-spacing: 0;
     }
 
     h2 {
       font-size: clamp(28px, 4vw, 44px);
-      line-height: 1.08;
+      line-height: 1.1;
       letter-spacing: 0;
     }
 
@@ -210,20 +207,55 @@
       line-height: 1.25;
     }
 
-    .muted {
-      color: var(--muted);
-    }
-
     .lead {
       max-width: 820px;
       color: var(--muted);
       font-size: clamp(17px, 2vw, 21px);
     }
 
+    .muted {
+      color: var(--muted);
+    }
+
+    .button-row,
+    .chip-row,
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      border: 1px solid var(--line-strong);
+      border-radius: 7px;
+      padding: 10px 15px;
+      color: var(--text);
+      background: rgba(30, 41, 59, 0.86);
+      font-weight: 780;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .button.primary {
+      border-color: rgba(118, 185, 0, 0.72);
+      color: #07110d;
+      background: var(--accent);
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(118, 185, 0, 0.72);
+      outline: none;
+    }
+
     .hero {
       position: relative;
-      min-height: calc(100vh - 72px);
-      padding: 96px 24px 72px;
+      min-height: calc(100vh - 70px);
+      padding: 92px 24px 70px;
       isolation: isolate;
     }
 
@@ -233,15 +265,15 @@
       z-index: -1;
       content: "";
       background:
-        linear-gradient(115deg, rgba(118, 185, 0, 0.13), transparent 42%),
-        linear-gradient(245deg, rgba(56, 189, 248, 0.07), transparent 38%);
+        linear-gradient(115deg, rgba(118, 185, 0, 0.16), transparent 40%),
+        linear-gradient(250deg, rgba(56, 189, 248, 0.07), transparent 36%);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.65fr);
+      grid-template-columns: minmax(0, 1fr) minmax(330px, 0.56fr);
       align-items: center;
-      gap: 54px;
+      gap: 48px;
     }
 
     .hero-copy {
@@ -249,203 +281,238 @@
       gap: 24px;
     }
 
-    .role-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      max-width: 900px;
-    }
-
-    .role-chip,
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      min-height: 32px;
-      border: 1px solid rgba(148, 163, 184, 0.2);
-      border-radius: 999px;
-      padding: 6px 10px;
-      color: var(--muted);
-      background: rgba(24, 34, 53, 0.8);
-      font-size: 13px;
-      white-space: nowrap;
-      transition: border-color 180ms ease, color 180ms ease, transform 180ms ease, background 180ms ease;
-    }
-
-    .role-chip:hover,
-    .pill:hover,
-    .pill.match {
-      border-color: rgba(118, 185, 0, 0.62);
-      color: var(--text);
-      background: var(--accent-soft);
-      transform: translateY(-1px);
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 6px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      border: 1px solid rgba(148, 163, 184, 0.24);
-      border-radius: 7px;
-      padding: 11px 16px;
-      color: var(--text);
-      background: rgba(30, 41, 59, 0.82);
-      font-weight: 750;
-      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
-    }
-
-    .button.primary {
-      border-color: rgba(118, 185, 0, 0.72);
-      color: #0b1220;
-      background: var(--accent);
-    }
-
-    .button:hover,
-    .button:focus-visible {
-      transform: translateY(-2px);
-      border-color: rgba(118, 185, 0, 0.75);
-      outline: none;
-    }
-
-    .button.primary:hover,
-    .button.primary:focus-visible {
-      background: #8ed31a;
-    }
-
-    .hero-panel {
-      position: relative;
-      border: 1px solid rgba(148, 163, 184, 0.16);
+    .hero-map {
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(24, 34, 53, 0.86);
+      background: rgba(18, 27, 44, 0.9);
       box-shadow: var(--shadow);
       overflow: hidden;
     }
 
-    .hero-panel::before {
-      display: block;
-      height: 6px;
-      background: linear-gradient(90deg, var(--accent), var(--cyan), var(--amber));
-      content: "";
-    }
-
-    .terminal {
-      padding: 22px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    .map-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      padding: 16px 18px;
+      color: var(--muted);
       font-size: 13px;
     }
 
-    .terminal-top {
-      display: flex;
-      gap: 7px;
-      margin-bottom: 18px;
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--muted);
-    }
-
-    .dot:nth-child(1) { background: var(--danger); }
-    .dot:nth-child(2) { background: var(--amber); }
-    .dot:nth-child(3) { background: var(--accent); }
-
-    .terminal-lines {
+    .map-body {
       display: grid;
-      gap: 12px;
+      gap: 14px;
+      padding: 18px;
     }
 
-    .terminal-line {
-      display: grid;
-      grid-template-columns: 92px 1fr;
-      gap: 12px;
-      color: var(--muted);
-    }
-
-    .terminal-key {
-      color: var(--accent);
-    }
-
-    .terminal-value {
-      color: var(--text);
-    }
-
-    .flow {
-      display: grid;
-      grid-template-columns: repeat(7, minmax(140px, 1fr));
-      gap: 12px;
-      align-items: stretch;
-    }
-
-    .flow-card {
+    .map-step {
       position: relative;
       display: grid;
-      gap: 8px;
-      min-height: 148px;
-      border: 1px solid rgba(148, 163, 184, 0.17);
-      border-radius: var(--radius);
-      padding: 18px;
-      background: rgba(24, 34, 53, 0.86);
-      transition: transform 180ms ease, border-color 180ms ease;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      align-items: start;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      border-radius: 7px;
+      padding: 14px;
+      background: rgba(30, 41, 59, 0.62);
     }
 
-    .flow-card:hover {
-      border-color: rgba(118, 185, 0, 0.5);
-      transform: translateY(-3px);
-    }
-
-    .flow-card:not(:last-child)::after {
+    .map-step:not(:last-child)::after {
       position: absolute;
-      top: 50%;
-      right: -12px;
-      width: 12px;
+      left: 31px;
+      bottom: -15px;
+      width: 2px;
+      height: 15px;
+      background: var(--accent);
+      content: "";
+    }
+
+    .node {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border: 1px solid rgba(118, 185, 0, 0.6);
+      border-radius: 7px;
       color: var(--accent);
-      content: ">";
-      transform: translateY(-50%);
+      background: rgba(118, 185, 0, 0.1);
+      font-weight: 850;
+      font-size: 13px;
     }
 
-    .flow-card strong {
-      color: var(--text);
-      line-height: 1.25;
+    .map-step strong {
+      display: block;
+      margin-bottom: 3px;
     }
 
-    .flow-card span {
+    .map-step span {
       color: var(--muted);
       font-size: 14px;
     }
 
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
+    .chip,
+    .priority,
+    .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      padding: 5px 10px;
+      color: var(--muted);
+      background: rgba(24, 34, 53, 0.85);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .priority {
+      border-color: rgba(118, 185, 0, 0.46);
+      color: var(--accent);
+      background: var(--accent-soft);
+      font-weight: 800;
+    }
+
+    .priority.next {
+      border-color: rgba(56, 189, 248, 0.42);
+      color: var(--blue);
+      background: rgba(56, 189, 248, 0.1);
+    }
+
+    .priority.later {
+      border-color: rgba(245, 158, 11, 0.42);
+      color: var(--amber);
+      background: rgba(245, 158, 11, 0.1);
+    }
+
+    .priority.no {
+      border-color: rgba(248, 113, 113, 0.42);
+      color: var(--red);
+      background: rgba(248, 113, 113, 0.1);
     }
 
     .card,
-    .timeline-card,
-    .positioning,
-    .role-column {
-      border: 1px solid rgba(148, 163, 184, 0.16);
+    .path-card,
+    .branch-card,
+    .project-card,
+    .matrix-col,
+    .pitch-card {
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(24, 34, 53, 0.9);
-      box-shadow: 0 14px 46px rgba(0, 0, 0, 0.16);
+      background: rgba(24, 34, 53, 0.92);
+      box-shadow: 0 14px 48px rgba(0, 0, 0, 0.16);
     }
 
     .card {
       padding: 22px;
     }
 
-    .card h3,
-    .timeline-card h3,
-    .role-column h3 {
-      margin-bottom: 14px;
+    .card:hover,
+    .path-card:hover,
+    .branch-card:hover,
+    .project-card:hover,
+    .matrix-col:hover {
+      border-color: rgba(118, 185, 0, 0.42);
+    }
+
+    .current-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .position-card {
+      display: grid;
+      gap: 18px;
+      border-color: rgba(118, 185, 0, 0.34);
+      background: linear-gradient(135deg, rgba(118, 185, 0, 0.12), rgba(24, 34, 53, 0.92));
+    }
+
+    .signal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .signal {
+      border: 1px solid rgba(148, 163, 184, 0.13);
+      border-radius: 7px;
+      padding: 15px;
+      background: rgba(15, 23, 42, 0.5);
+    }
+
+    .signal strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .path {
+      position: relative;
+      display: grid;
+      gap: 18px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .path::before {
+      position: absolute;
+      inset: 24px auto 24px 31px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent), var(--blue), rgba(148, 163, 184, 0.16));
+      content: "";
+    }
+
+    .path-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 18px;
+    }
+
+    .path-number {
+      z-index: 1;
+      display: grid;
+      width: 64px;
+      height: 64px;
+      place-items: center;
+      border: 1px solid rgba(118, 185, 0, 0.62);
+      border-radius: 8px;
+      color: var(--accent);
+      background: #101827;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .path-card {
+      display: grid;
+      gap: 18px;
+      padding: 24px;
+    }
+
+    .path-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: start;
+      flex-wrap: wrap;
+    }
+
+    .path-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .mini-panel {
+      border: 1px solid rgba(148, 163, 184, 0.13);
+      border-radius: 7px;
+      padding: 15px;
+      background: rgba(15, 23, 42, 0.45);
+    }
+
+    .mini-panel strong {
+      display: block;
+      margin-bottom: 10px;
     }
 
     .clean-list {
@@ -453,13 +520,13 @@
       gap: 8px;
       margin: 0;
       padding: 0;
-      list-style: none;
       color: var(--muted);
+      list-style: none;
     }
 
     .clean-list li {
       position: relative;
-      padding-left: 17px;
+      padding-left: 16px;
     }
 
     .clean-list li::before {
@@ -473,96 +540,114 @@
       content: "";
     }
 
-    .positioning {
-      margin-top: 18px;
-      padding: 26px;
-      border-color: rgba(118, 185, 0, 0.38);
-      background: linear-gradient(135deg, rgba(118, 185, 0, 0.12), rgba(24, 34, 53, 0.92));
-    }
-
-    .positioning strong {
-      color: var(--text);
-    }
-
-    .timeline {
-      position: relative;
+    .branch-layout {
       display: grid;
-      gap: 18px;
-      max-width: 960px;
-      margin: 0 auto;
+      gap: 22px;
     }
 
-    .timeline::before {
-      position: absolute;
-      inset: 0 auto 0 27px;
-      width: 2px;
-      background: linear-gradient(180deg, var(--accent), rgba(56, 189, 248, 0.55), rgba(148, 163, 184, 0.12));
-      content: "";
-    }
-
-    .timeline-item {
-      position: relative;
+    .branch-hub {
       display: grid;
-      grid-template-columns: 56px 1fr;
+      grid-template-columns: minmax(0, 1fr) 160px minmax(0, 1fr);
+      align-items: center;
       gap: 18px;
     }
 
-    .stage-number {
-      z-index: 1;
+    .hub-box {
+      border: 1px solid rgba(118, 185, 0, 0.42);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+      background: rgba(118, 185, 0, 0.1);
+    }
+
+    .hub-line {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    .branch-grid {
       display: grid;
-      width: 56px;
-      height: 56px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .branch-card {
+      display: grid;
+      gap: 16px;
+      padding: 22px;
+    }
+
+    .branch-letter {
+      display: grid;
+      width: 42px;
+      height: 42px;
       place-items: center;
-      border: 1px solid rgba(118, 185, 0, 0.58);
-      border-radius: 8px;
-      color: var(--accent);
-      background: #111827;
+      border-radius: 7px;
+      color: #07110d;
+      background: var(--accent);
       font-weight: 900;
     }
 
-    .timeline-card {
-      padding: 24px;
+    .skill-pill {
+      transition: opacity 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
     }
 
-    .timeline-card:hover,
-    .card:hover,
-    .role-column:hover {
-      border-color: rgba(118, 185, 0, 0.42);
-    }
-
-    .meta-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .meta-box {
-      border: 1px solid rgba(148, 163, 184, 0.13);
-      border-radius: 7px;
-      padding: 16px;
-      background: rgba(15, 23, 42, 0.45);
-    }
-
-    .meta-box strong {
-      display: block;
-      margin-bottom: 10px;
+    .skill-pill.match {
+      border-color: rgba(118, 185, 0, 0.7);
       color: var(--text);
+      background: var(--accent-soft);
     }
 
-    .skill-toolbar {
+    .skill-pill.dimmed {
+      opacity: 0.28;
+    }
+
+    .project-ladder {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      align-items: start;
+    }
+
+    .project-card {
+      position: relative;
+      display: grid;
+      gap: 16px;
+      padding: 22px;
+      min-height: 100%;
+    }
+
+    .project-card:not(:last-child)::after {
+      position: absolute;
+      top: 34px;
+      right: -13px;
+      z-index: 2;
+      color: var(--accent);
+      content: ">";
+      font-weight: 900;
+    }
+
+    .project-index {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .matrix-toolbar {
       display: flex;
-      align-items: center;
       justify-content: space-between;
       gap: 14px;
-      margin-bottom: 18px;
+      align-items: center;
       flex-wrap: wrap;
+      margin-bottom: 18px;
     }
 
-    .search-field {
+    .search {
       width: min(100%, 360px);
       min-height: 44px;
-      border: 1px solid rgba(148, 163, 184, 0.24);
+      border: 1px solid var(--line-strong);
       border-radius: 7px;
       padding: 10px 13px;
       color: var(--text);
@@ -570,126 +655,83 @@
       outline: none;
     }
 
-    .search-field:focus {
+    .search:focus {
       border-color: rgba(118, 185, 0, 0.72);
-      box-shadow: 0 0 0 3px rgba(118, 185, 0, 0.14);
+      box-shadow: 0 0 0 3px rgba(118, 185, 0, 0.13);
     }
 
-    .skill-grid {
+    .matrix-grid {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 14px;
     }
 
-    .skill-column {
-      border: 1px solid rgba(148, 163, 184, 0.16);
-      border-radius: var(--radius);
+    .matrix-col {
+      display: grid;
+      gap: 14px;
+      align-content: start;
       padding: 18px;
-      background: rgba(30, 41, 59, 0.78);
     }
 
-    .skill-column h3 {
-      margin-bottom: 14px;
-      font-size: 17px;
-    }
-
-    .pill-wrap {
+    .matrix-col h3 {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 18px;
     }
 
-    .pill.dimmed {
-      opacity: 0.32;
-    }
-
-    .milestone-grid {
+    .interview-grid,
+    .roles-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
     }
 
-    .tag {
-      display: inline-flex;
-      width: fit-content;
-      margin-bottom: 14px;
-      border: 1px solid rgba(118, 185, 0, 0.42);
-      border-radius: 999px;
-      padding: 4px 9px;
-      color: var(--accent);
-      background: var(--accent-soft);
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .checklist-grid {
+    .readiness-card {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 14px;
     }
 
-    .question-list {
-      display: grid;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      color: var(--muted);
-      font-size: 14px;
+    .progress-track {
+      height: 8px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(148, 163, 184, 0.16);
     }
 
-    .question-list li {
-      border-top: 1px solid rgba(148, 163, 184, 0.12);
-      padding-top: 10px;
+    .progress-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--blue));
     }
 
-    .roles-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 16px;
-    }
-
-    .role-column {
-      padding: 24px;
-    }
-
-    .role-column.avoid {
-      border-color: rgba(248, 113, 113, 0.24);
-    }
-
-    .role-column.avoid .clean-list li::before {
-      background: var(--danger);
+    .role-card.no .clean-list li::before {
+      background: var(--red);
     }
 
     .pitch-card {
-      border: 1px solid rgba(118, 185, 0, 0.36);
-      border-radius: var(--radius);
+      display: grid;
+      gap: 24px;
       padding: clamp(24px, 4vw, 40px);
+      border-color: rgba(118, 185, 0, 0.36);
       background:
         linear-gradient(135deg, rgba(118, 185, 0, 0.12), rgba(56, 189, 248, 0.07)),
-        rgba(24, 34, 53, 0.92);
+        rgba(24, 34, 53, 0.94);
       box-shadow: var(--shadow);
-    }
-
-    .pitch-card h3 {
-      max-width: 780px;
-      margin-bottom: 18px;
-      font-size: clamp(24px, 3vw, 34px);
     }
 
     .pitch-grid {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
-      gap: 24px;
-      margin-top: 28px;
+      gap: 22px;
     }
 
-    .site-footer {
-      border-top: 1px solid rgba(148, 163, 184, 0.12);
+    .footer {
+      border-top: 1px solid var(--line);
       padding: 30px 24px;
       color: var(--muted);
-      background: rgba(15, 23, 42, 0.82);
+      background: rgba(15, 23, 42, 0.84);
       text-align: center;
     }
 
@@ -705,7 +747,7 @@
       border: 1px solid rgba(118, 185, 0, 0.5);
       border-radius: 8px;
       color: var(--text);
-      background: rgba(24, 34, 53, 0.94);
+      background: rgba(24, 34, 53, 0.95);
       box-shadow: var(--shadow);
       cursor: pointer;
       opacity: 0;
@@ -721,29 +763,30 @@
     }
 
     @media (max-width: 1100px) {
-      .flow,
-      .skill-grid,
-      .checklist-grid {
+      .project-ladder,
+      .matrix-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .flow-card:not(:last-child)::after {
+      .project-card:not(:last-child)::after {
         content: "";
       }
 
-      .card-grid,
-      .milestone-grid {
+      .branch-grid,
+      .interview-grid,
+      .roles-grid,
+      .signal-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
     @media (max-width: 860px) {
-      .nav {
-        min-height: 66px;
-      }
-
       .menu-toggle {
         display: inline-block;
+      }
+
+      .nav {
+        min-height: 66px;
       }
 
       .nav-links {
@@ -751,8 +794,8 @@
         inset: 66px 16px auto 16px;
         display: none;
         align-items: stretch;
-        justify-content: flex-start;
-        border: 1px solid rgba(148, 163, 184, 0.2);
+        justify-content: start;
+        border: 1px solid var(--line-strong);
         border-radius: 8px;
         padding: 10px;
         background: rgba(15, 23, 42, 0.98);
@@ -773,14 +816,21 @@
       }
 
       .hero-grid,
-      .pitch-grid,
-      .roles-grid,
-      .meta-grid {
+      .current-grid,
+      .path-body,
+      .pitch-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-panel {
-        max-width: 560px;
+      .branch-hub {
+        grid-template-columns: 1fr;
+      }
+
+      .hub-line {
+        height: 38px;
+        width: 2px;
+        justify-self: center;
+        background: linear-gradient(180deg, transparent, var(--accent), transparent);
       }
     }
 
@@ -789,59 +839,53 @@
         padding: 64px 18px;
       }
 
+      .hero,
       .nav {
-        padding: 0 18px;
-      }
-
-      .hero {
         padding-inline: 18px;
       }
 
-      .card-grid,
-      .milestone-grid,
-      .flow,
-      .skill-grid,
-      .checklist-grid {
+      .project-ladder,
+      .matrix-grid,
+      .branch-grid,
+      .interview-grid,
+      .roles-grid,
+      .signal-grid {
         grid-template-columns: 1fr;
       }
 
-      .timeline::before {
-        left: 21px;
+      .path::before {
+        left: 23px;
       }
 
-      .timeline-item {
-        grid-template-columns: 44px 1fr;
+      .path-item {
+        grid-template-columns: 48px 1fr;
         gap: 14px;
       }
 
-      .stage-number {
-        width: 44px;
-        height: 44px;
-        font-size: 14px;
+      .path-number {
+        width: 48px;
+        height: 48px;
+        font-size: 16px;
       }
 
-      .timeline-card,
-      .card,
-      .role-column {
-        padding: 20px;
-      }
-
-      .terminal-line {
-        grid-template-columns: 1fr;
-        gap: 3px;
+      .path-card,
+      .branch-card,
+      .project-card,
+      .card {
+        padding: 19px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-  <!-- Header / Navigation -->
+  <!-- Header -->
   <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
-      <a class="logo" href="#top" aria-label="AI Roadmap home">
-        <span class="logo-mark">AI</span>
-        <span>AI Roadmap</span>
+      <a class="brand" href="#top" aria-label="AI Engineer Roadmap home">
+        <span class="brand-mark">AI</span>
+        <span>Roadmap</span>
       </a>
       <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
         <span></span>
@@ -849,10 +893,11 @@
         <span></span>
       </button>
       <div class="nav-links" id="navLinks">
-        <a class="nav-link" href="#overview">Overview</a>
-        <a class="nav-link" href="#path">Path</a>
-        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#current">Current</a>
+        <a class="nav-link" href="#core-path">Path</a>
+        <a class="nav-link" href="#branches">Branches</a>
         <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#skills">Skills</a>
         <a class="nav-link" href="#interview">Interview</a>
         <a class="nav-link" href="#roles">Roles</a>
       </div>
@@ -860,370 +905,429 @@
   </header>
 
   <main id="top">
-    <!-- Hero section -->
+    <!-- Hero -->
     <section class="hero section" aria-labelledby="heroTitle">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Production AI Engineering Path</p>
+          <p class="eyebrow">Career Path, Not Skill Dump</p>
           <h1 id="heroTitle">AI Engineer Roadmap</h1>
-          <p class="lead">From LLM/RAG chatbot production to GenAI Platform, LLM Inference, and Multimodal AI Engineering.</p>
-          <p class="muted">A practical roadmap for moving from RAG chatbot development to production-grade GenAI systems, GPU-aware inference, and NVIDIA-ready AI engineering.</p>
-          <div class="role-strip" aria-label="Target roles">
-            <span class="role-chip">AI Engineer</span>
-            <span class="role-chip">GenAI Engineer</span>
-            <span class="role-chip">LLM Engineer</span>
-            <span class="role-chip">AI Platform Engineer</span>
-            <span class="role-chip">LLM Inference Engineer</span>
-            <span class="role-chip">Vision/Multimodal AI Engineer</span>
+          <p class="lead">Current LLM/RAG job → Production RAG Engineer → LLM Serving Engineer → GenAI Platform Engineer → optional specialization branches.</p>
+          <div class="chip-row" aria-label="Priority levels">
+            <span class="priority">Must Learn Now</span>
+            <span class="priority next">Learn Next</span>
+            <span class="priority later">Later / Optional</span>
           </div>
-          <div class="cta-row" aria-label="Primary actions">
-            <a class="button primary" href="#path">Start Path</a>
-            <a class="button" href="#skills">Skill Tree</a>
-            <a class="button" href="#projects">Project Milestones</a>
+          <div class="button-row">
+            <a class="button primary" href="#core-path">Start Core Path</a>
+            <a class="button" href="#branches">Choose Branch</a>
+            <a class="button" href="#projects">Build Portfolio</a>
           </div>
         </div>
 
-        <aside class="hero-panel" aria-label="Roadmap snapshot">
-          <div class="terminal">
-            <div class="terminal-top" aria-hidden="true">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
+        <aside class="hero-map" aria-label="Roadmap snapshot">
+          <div class="map-top">
+            <span>Progression map</span>
+            <span>Production-first</span>
+          </div>
+          <div class="map-body">
+            <div class="map-step">
+              <span class="node">0</span>
+              <div><strong>Current LLM/RAG work</strong><span>Use real job context as leverage.</span></div>
             </div>
-            <div class="terminal-lines">
-              <div class="terminal-line"><span class="terminal-key">base</span><span class="terminal-value">LLM/RAG + CV/VLM projects</span></div>
-              <div class="terminal-line"><span class="terminal-key">next</span><span class="terminal-value">production retrieval + eval</span></div>
-              <div class="terminal-line"><span class="terminal-key">serve</span><span class="terminal-value">vLLM, batching, KV cache</span></div>
-              <div class="terminal-line"><span class="terminal-key">platform</span><span class="terminal-value">FastAPI, Docker, logs</span></div>
-              <div class="terminal-line"><span class="terminal-key">gpu</span><span class="terminal-value">TensorRT, Triton, memory</span></div>
-              <div class="terminal-line"><span class="terminal-key">extend</span><span class="terminal-value">CLIP, VLM, document AI</span></div>
+            <div class="map-step">
+              <span class="node">1</span>
+              <div><strong>Production RAG Engineer</strong><span>Retrieval quality, citations, evaluation, logs.</span></div>
+            </div>
+            <div class="map-step">
+              <span class="node">2</span>
+              <div><strong>LLM Serving Engineer</strong><span>vLLM, streaming, latency, GPU memory.</span></div>
+            </div>
+            <div class="map-step">
+              <span class="node">3</span>
+              <div><strong>GenAI Platform Engineer</strong><span>API gateway, services, monitoring, deployment.</span></div>
             </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- Roadmap overview -->
-    <section class="section alt" id="overview" aria-labelledby="overviewTitle">
+    <!-- Current Position -->
+    <section class="section alt" id="current" aria-labelledby="currentTitle">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Overview</p>
-          <h2 id="overviewTitle">Roadmap overview</h2>
-          <p class="muted">A practical sequence from current production experience to platform-level, GPU-aware, multimodal AI engineering.</p>
+        <div class="section-head">
+          <p class="eyebrow">Current Position</p>
+          <h2 id="currentTitle">Start from production context, not from zero</h2>
+          <p class="lead">The strongest story is not “I know many AI topics.” It is “I can turn LLM/RAG work into reliable GenAI systems.”</p>
         </div>
-        <div class="flow" aria-label="Roadmap flow">
-          <div class="flow-card"><strong>Current Base</strong><span>LLM/RAG chatbot + CV/VLM projects</span></div>
-          <div class="flow-card"><strong>Production RAG</strong><span>retrieval, reranking, evaluation, monitoring</span></div>
-          <div class="flow-card"><strong>LLM Inference</strong><span>vLLM, batching, KV cache, quantization</span></div>
-          <div class="flow-card"><strong>AI Platform</strong><span>FastAPI, Docker, vector DB, logging, deployment</span></div>
-          <div class="flow-card"><strong>NVIDIA Stack</strong><span>GPU memory, ONNX, TensorRT, Triton</span></div>
-          <div class="flow-card"><strong>Multimodal Extension</strong><span>CLIP, VLM, image-text retrieval, document AI</span></div>
-          <div class="flow-card"><strong>Portfolio & Interview</strong><span>system design, benchmark report, GitHub project</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Current base -->
-    <section class="section" id="base" aria-labelledby="baseTitle">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Starting Point</p>
-          <h2 id="baseTitle">Stage 0 — Current Base</h2>
-          <p class="lead">This roadmap starts from a practical AI engineer profile, not from zero.</p>
-        </div>
-        <div class="card-grid">
-          <article class="card">
-            <h3>LLM/RAG Chatbot Production</h3>
-            <ul class="clean-list">
-              <li>chatbot pipeline</li>
-              <li>document QA</li>
-              <li>prompt design</li>
-              <li>retrieval integration</li>
-            </ul>
+        <div class="current-grid">
+          <article class="card position-card">
+            <span class="priority">Must Learn Now</span>
+            <h3>Positioning baseline</h3>
+            <p class="muted">AI Engineer with production experience in LLM/RAG systems, expanding into LLM serving, AI platform engineering, and multimodal extensions.</p>
           </article>
-          <article class="card">
-            <h3>Python & PyTorch</h3>
-            <ul class="clean-list">
-              <li>training loop</li>
-              <li>evaluation</li>
-              <li>model debugging</li>
-              <li>GPU usage</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Computer Vision / VLM</h3>
-            <ul class="clean-list">
-              <li>image-text retrieval</li>
-              <li>CLIP/X-VLM style systems</li>
-              <li>visual evaluation</li>
-              <li>multimodal projects</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Server & Engineering</h3>
-            <ul class="clean-list">
-              <li>Linux</li>
-              <li>Docker</li>
-              <li>API deployment</li>
-              <li>logging and debugging</li>
-            </ul>
-          </article>
-        </div>
-        <div class="positioning">
-          <p class="muted">Do not position yourself as just a fresher AI developer. Position yourself as:</p>
-          <p><strong>AI Engineer with production experience in LLM/RAG systems, plus hands-on experience in model evaluation, GPU training, and multimodal AI pipelines.</strong></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Main roadmap timeline -->
-    <section class="section alt" id="path" aria-labelledby="pathTitle">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Main Path</p>
-          <h2 id="pathTitle">Main roadmap timeline</h2>
-          <p class="muted">Each stage turns into a concrete deliverable that can be shown in GitHub, interviews, and portfolio conversations.</p>
-        </div>
-        <div class="timeline">
-          <article class="timeline-item">
-            <span class="stage-number">01</span>
-            <div class="timeline-card">
-              <h3>Production RAG Engineer</h3>
-              <p class="muted">Build RAG systems that work beyond demos: measurable, logged, grounded, and production-friendly.</p>
-              <div class="meta-grid">
-                <div class="meta-box"><strong>Key skills</strong><div class="pill-wrap"><span class="pill">Document parsing</span><span class="pill">Chunking strategy</span><span class="pill">Embedding models</span><span class="pill">Vector databases</span><span class="pill">Metadata filtering</span><span class="pill">Hybrid search</span><span class="pill">Reranking</span><span class="pill">Context compression</span><span class="pill">Answer grounding</span><span class="pill">Citations</span><span class="pill">RAG evaluation</span></div></div>
-                <div class="meta-box"><strong>Deliverable</strong><p class="muted">Build a RAG chatbot with retrieval logs, citations, reranker, and evaluation metrics.</p></div>
-              </div>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <span class="stage-number">02</span>
-            <div class="timeline-card">
-              <h3>LLM Serving & Inference Engineer</h3>
-              <p class="muted">Move from calling LLM APIs to serving and benchmarking models on GPU.</p>
-              <div class="meta-grid">
-                <div class="meta-box"><strong>Key skills</strong><div class="pill-wrap"><span class="pill">vLLM</span><span class="pill">OpenAI-compatible local API</span><span class="pill">Prefill vs decode</span><span class="pill">KV cache</span><span class="pill">PagedAttention</span><span class="pill">Continuous batching</span><span class="pill">Streaming response</span><span class="pill">Quantization</span><span class="pill">TTFT</span><span class="pill">TPOT</span><span class="pill">tokens/sec</span><span class="pill">GPU memory</span></div></div>
-                <div class="meta-box"><strong>Deliverable</strong><p class="muted">Serve a local Qwen/Llama/Phi/Gemma model using vLLM and connect it to the RAG pipeline.</p></div>
-              </div>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <span class="stage-number">03</span>
-            <div class="timeline-card">
-              <h3>AI Platform Engineer</h3>
-              <p class="muted">Build a complete GenAI system with API, model server, vector DB, monitoring, and deployment.</p>
-              <div class="meta-grid">
-                <div class="meta-box"><strong>Key skills</strong><div class="pill-wrap"><span class="pill">FastAPI</span><span class="pill">Pydantic</span><span class="pill">async API</span><span class="pill">PostgreSQL</span><span class="pill">Redis</span><span class="pill">queue system</span><span class="pill">Docker Compose</span><span class="pill">logging</span><span class="pill">monitoring</span><span class="pill">config management</span><span class="pill">API security</span></div></div>
-                <div class="meta-box"><strong>Deliverable</strong><p class="muted">Build a mini GenAI platform with gateway API, vector database, model server, logs, and dashboard.</p></div>
-              </div>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <span class="stage-number">04</span>
-            <div class="timeline-card">
-              <h3>GPU / NVIDIA Stack</h3>
-              <p class="muted">Become GPU-aware and understand the deployment stack around NVIDIA AI systems.</p>
-              <div class="meta-grid">
-                <div class="meta-box"><strong>Key skills</strong><div class="pill-wrap"><span class="pill">CUDA concept</span><span class="pill">nvidia-smi</span><span class="pill">GPU memory</span><span class="pill">OOM debugging</span><span class="pill">mixed precision</span><span class="pill">ONNX</span><span class="pill">TensorRT</span><span class="pill">Triton Inference Server</span><span class="pill">dynamic batching</span><span class="pill">TensorRT-LLM concept</span></div></div>
-                <div class="meta-box"><strong>Deliverable</strong><p class="muted">Deploy one small model through ONNX/TensorRT/Triton and compare latency before and after optimization.</p></div>
-              </div>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <span class="stage-number">05</span>
-            <div class="timeline-card">
-              <h3>Multimodal / Vision AI Extension</h3>
-              <p class="muted">Use Computer Vision and VLM background as a differentiator for AI engineering roles.</p>
-              <div class="meta-grid">
-                <div class="meta-box"><strong>Key skills</strong><div class="pill-wrap"><span class="pill">CLIP</span><span class="pill">SigLIP</span><span class="pill">image-text retrieval</span><span class="pill">top-k retrieval</span><span class="pill">recall@k</span><span class="pill">mAP</span><span class="pill">OCR + LLM</span><span class="pill">VLM prompting</span><span class="pill">document understanding</span><span class="pill">segmentation/detection basics</span></div></div>
-                <div class="meta-box"><strong>Deliverable</strong><p class="muted">Add image-text retrieval or document-image understanding to the GenAI platform.</p></div>
-              </div>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <span class="stage-number">06</span>
-            <div class="timeline-card">
-              <h3>Portfolio & Interview Ready</h3>
-              <p class="muted">Convert the roadmap into a GitHub portfolio project and interview-ready story.</p>
-              <div class="meta-grid">
-                <div class="meta-box"><strong>Key skills</strong><div class="pill-wrap"><span class="pill">system design</span><span class="pill">project explanation</span><span class="pill">benchmark reporting</span><span class="pill">architecture diagram</span><span class="pill">trade-off explanation</span><span class="pill">deployment README</span><span class="pill">interview Q&A</span></div></div>
-                <div class="meta-box"><strong>Deliverable</strong><p class="muted">A polished GitHub project with README, architecture diagram, benchmark report, demo screenshots, and interview notes.</p></div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skill tree -->
-    <section class="section" id="skills" aria-labelledby="skillsTitle">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Skill Tree</p>
-          <h2 id="skillsTitle">Five pillars to build in parallel</h2>
-        </div>
-        <div class="skill-toolbar">
-          <label class="muted" for="skillSearch">Filter skills</label>
-          <input class="search-field" id="skillSearch" type="search" placeholder="Try: TensorRT, RAG, Docker, CLIP" autocomplete="off" />
-        </div>
-        <div class="skill-grid">
-          <article class="skill-column"><h3>GenAI / RAG</h3><div class="pill-wrap"><span class="pill">Prompting</span><span class="pill">Chunking</span><span class="pill">Embedding</span><span class="pill">Vector DB</span><span class="pill">Hybrid Search</span><span class="pill">Reranking</span><span class="pill">RAG Evaluation</span><span class="pill">Guardrails</span><span class="pill">Agentic Workflow</span></div></article>
-          <article class="skill-column"><h3>LLM Inference</h3><div class="pill-wrap"><span class="pill">vLLM</span><span class="pill">KV Cache</span><span class="pill">Batching</span><span class="pill">Quantization</span><span class="pill">Streaming</span><span class="pill">Latency Benchmark</span><span class="pill">Throughput Benchmark</span><span class="pill">Model Memory</span></div></article>
-          <article class="skill-column"><h3>AI Platform</h3><div class="pill-wrap"><span class="pill">FastAPI</span><span class="pill">Docker</span><span class="pill">PostgreSQL</span><span class="pill">Redis</span><span class="pill">Queue</span><span class="pill">Logging</span><span class="pill">Monitoring</span><span class="pill">CI/CD</span><span class="pill">Deployment</span></div></article>
-          <article class="skill-column"><h3>NVIDIA Stack</h3><div class="pill-wrap"><span class="pill">CUDA Concept</span><span class="pill">nvidia-smi</span><span class="pill">ONNX</span><span class="pill">TensorRT</span><span class="pill">Triton</span><span class="pill">TensorRT-LLM</span><span class="pill">GPU Profiling</span><span class="pill">Mixed Precision</span></div></article>
-          <article class="skill-column"><h3>Multimodal AI</h3><div class="pill-wrap"><span class="pill">CLIP</span><span class="pill">SigLIP</span><span class="pill">VLM</span><span class="pill">OCR</span><span class="pill">Image Retrieval</span><span class="pill">Object Detection</span><span class="pill">Segmentation</span><span class="pill">Multimodal RAG</span></div></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Project milestones -->
-    <section class="section alt" id="projects" aria-labelledby="projectsTitle">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Project Milestones</p>
-          <h2 id="projectsTitle">Portfolio projects that prove the path</h2>
-        </div>
-        <div class="milestone-grid">
-          <article class="card"><span class="tag">Build</span><h3>RAG Baseline</h3><p class="muted">Build a basic RAG chatbot with PDF upload, vector search, and answer generation.</p><ul class="clean-list"><li>GitHub repo</li><li>README</li><li>demo screenshots</li><li>sample questions</li><li>retrieval logs</li></ul></article>
-          <article class="card"><span class="tag">Improve</span><h3>Production RAG</h3><p class="muted">Add reranker, metadata filtering, evaluation metrics, logging, and citations.</p><ul class="clean-list"><li>recall@k</li><li>MRR</li><li>faithfulness checklist</li><li>latency report</li><li>failure cases</li></ul></article>
-          <article class="card"><span class="tag">Deploy</span><h3>LLM Serving</h3><p class="muted">Replace external API with self-hosted vLLM model server.</p><ul class="clean-list"><li>vLLM server</li><li>FastAPI gateway</li><li>streaming response</li><li>TTFT / TPOT / tokens/sec benchmark</li><li>GPU memory report</li></ul></article>
-          <article class="card"><span class="tag">Deploy</span><h3>AI Platform</h3><p class="muted">Dockerize the full system and add monitoring/dashboard.</p><ul class="clean-list"><li>Docker Compose</li><li>service architecture diagram</li><li>logs</li><li>API docs</li><li>dashboard</li></ul></article>
-          <article class="card"><span class="tag">Optimize</span><h3>NVIDIA-style Optimization</h3><p class="muted">Add ONNX/TensorRT/Triton demo for one model.</p><ul class="clean-list"><li>before/after latency</li><li>memory usage</li><li>deployment notes</li><li>dynamic batching notes</li></ul></article>
-          <article class="card"><span class="tag">Extend</span><h3>Multimodal Extension</h3><p class="muted">Add image-text retrieval or document image understanding.</p><ul class="clean-list"><li>CLIP/SigLIP retrieval</li><li>top-k results</li><li>recall@k</li><li>visual demo</li></ul></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interview checklist -->
-    <section class="section" id="interview" aria-labelledby="interviewTitle">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Interview Checklist</p>
-          <h2 id="interviewTitle">Questions to answer with projects, not theory alone</h2>
-        </div>
-        <div class="checklist-grid">
-          <article class="card"><h3>RAG System Design</h3><ul class="question-list"><li>How do you design a RAG chatbot for 10,000 internal documents?</li><li>How do you evaluate retrieval quality?</li><li>How do you reduce hallucination?</li><li>When do you use reranking?</li><li>How do you handle document updates?</li></ul></article>
-          <article class="card"><h3>LLM Inference</h3><ul class="question-list"><li>What is KV cache?</li><li>What is the difference between prefill and decode?</li><li>What is continuous batching?</li><li>How do you measure LLM serving performance?</li><li>How does quantization affect quality and memory?</li></ul></article>
-          <article class="card"><h3>AI Platform</h3><ul class="question-list"><li>How do you design an API gateway for LLM serving?</li><li>How do you log prompts, retrieval results, and model responses?</li><li>How do you handle latency and timeout?</li><li>How do you deploy with Docker?</li><li>How do you monitor GPU utilization?</li></ul></article>
-          <article class="card"><h3>NVIDIA/GPU Basics</h3><ul class="question-list"><li>Why does a model run out of GPU memory?</li><li>What is mixed precision?</li><li>What is TensorRT used for?</li><li>What is Triton Inference Server?</li><li>When would you use ONNX?</li></ul></article>
-          <article class="card"><h3>Multimodal AI</h3><ul class="question-list"><li>How does CLIP image-text retrieval work?</li><li>How do you evaluate retrieval models?</li><li>What is the difference between image-text retrieval and VQA?</li><li>How can OCR and LLM be combined?</li><li>How do you deploy a vision model efficiently?</li></ul></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Target roles -->
-    <section class="section alt" id="roles" aria-labelledby="rolesTitle">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Target Roles</p>
-          <h2 id="rolesTitle">Position toward engineering-heavy AI roles</h2>
-        </div>
-        <div class="roles-grid">
-          <article class="role-column"><h3>Primary Target Roles</h3><ul class="clean-list"><li>AI Engineer</li><li>GenAI Engineer</li><li>LLM Engineer</li><li>Applied AI Engineer</li><li>AI Platform Engineer</li><li>LLM Inference Engineer</li></ul></article>
-          <article class="role-column"><h3>Secondary Target Roles</h3><ul class="clean-list"><li>Machine Learning Engineer</li><li>Deep Learning Engineer</li><li>Vision AI Engineer</li><li>Multimodal AI Engineer</li><li>MLOps Engineer for AI Systems</li></ul></article>
-          <article class="role-column avoid"><h3>Avoid For Now</h3><ul class="clean-list"><li>Speech AI Engineer</li><li>Research Scientist</li><li>AI Researcher</li><li>Embedded/Firmware Engineer</li><li>CUDA Compiler Engineer</li><li>Data Analyst</li></ul></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Suggested positioning -->
-    <section class="section" id="positioning" aria-labelledby="positioningTitle">
-      <div class="container">
-        <div class="pitch-card">
-          <p class="eyebrow">Suggested Positioning</p>
-          <h3 id="positioningTitle">AI Engineer focused on LLM/RAG production, GPU-based model serving, and multimodal AI systems.</h3>
-          <p class="lead">I build production-style LLM/RAG systems with document ingestion, vector retrieval, reranking, streaming generation, evaluation, and monitoring. I am expanding toward GPU-aware inference using vLLM, quantization, Triton/TensorRT basics, and multimodal AI systems such as image-text retrieval and document understanding.</p>
-          <div class="pitch-grid">
-            <div>
-              <h3>Short pitch</h3>
-              <p class="muted">A practical engineering profile for GenAI teams that care about reliable retrieval, measurable serving performance, and deployment discipline.</p>
-            </div>
-            <div>
-              <h3>CV bullets</h3>
-              <ul class="clean-list">
-                <li>Built production-style RAG chatbot pipeline with document ingestion, vector retrieval, reranking, streaming generation, evaluation, and monitoring.</li>
-                <li>Deployed LLM serving system using vLLM with FastAPI gateway, benchmarking latency, throughput, and GPU memory usage.</li>
-                <li>Developed vision-language retrieval pipeline using CLIP/X-VLM-style models with top-k retrieval, reranking, and evaluation metrics.</li>
-                <li>Designed AI system components with Docker, Linux server workflow, structured logging, and API-based deployment.</li>
-              </ul>
-            </div>
+          <div class="signal-grid">
+            <article class="signal"><strong>Already Useful</strong><p class="muted">RAG chatbot, prompt design, document QA, retrieval integration.</p></article>
+            <article class="signal"><strong>Needs Depth</strong><p class="muted">RAG evaluation, reranking, citations, latency, monitoring.</p></article>
+            <article class="signal"><strong>Differentiator</strong><p class="muted">Vision/VLM projects, CLIP-style retrieval, GPU-aware inference.</p></article>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Core Career Path -->
+    <section class="section" id="core-path" aria-labelledby="pathTitle">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Core Career Path</p>
+          <h2 id="pathTitle">Three stages before specialization</h2>
+          <p class="muted">These are not equal buckets. Finish the core path first, then branch based on target role and project evidence.</p>
+        </div>
+        <div class="path">
+          <article class="path-item">
+            <span class="path-number">1</span>
+            <div class="path-card">
+              <div class="path-head">
+                <div>
+                  <h3>Stage 1 — Production RAG Engineer</h3>
+                  <p class="muted">Make retrieval systems measurable, grounded, logged, and maintainable.</p>
+                </div>
+                <span class="priority">Must Learn Now</span>
+              </div>
+              <div class="path-body">
+                <div class="mini-panel">
+                  <strong>Focus</strong>
+                  <div class="tag-row"><span class="skill-pill">document parsing</span><span class="skill-pill">chunking</span><span class="skill-pill">hybrid search</span><span class="skill-pill">reranking</span><span class="skill-pill">citations</span><span class="skill-pill">RAG evaluation</span></div>
+                </div>
+                <div class="mini-panel">
+                  <strong>Portfolio output</strong>
+                  <p class="muted">Production RAG system with retrieval logs, citations, evaluation report, and failure-case analysis.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="path-item">
+            <span class="path-number">2</span>
+            <div class="path-card">
+              <div class="path-head">
+                <div>
+                  <h3>Stage 2 — LLM Serving Engineer</h3>
+                  <p class="muted">Move from API calls to serving and benchmarking models with real latency and memory constraints.</p>
+                </div>
+                <span class="priority next">Learn Next</span>
+              </div>
+              <div class="path-body">
+                <div class="mini-panel">
+                  <strong>Focus</strong>
+                  <div class="tag-row"><span class="skill-pill">vLLM</span><span class="skill-pill">KV cache</span><span class="skill-pill">streaming</span><span class="skill-pill">batching</span><span class="skill-pill">TTFT</span><span class="skill-pill">TPOT</span><span class="skill-pill">tokens/sec</span></div>
+                </div>
+                <div class="mini-panel">
+                  <strong>Portfolio output</strong>
+                  <p class="muted">Inference benchmark comparing model size, quantization, throughput, latency, and GPU memory usage.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="path-item">
+            <span class="path-number">3</span>
+            <div class="path-card">
+              <div class="path-head">
+                <div>
+                  <h3>Stage 3 — GenAI Platform Engineer</h3>
+                  <p class="muted">Package RAG and serving into a real system with APIs, deployment, observability, and config discipline.</p>
+                </div>
+                <span class="priority next">Learn Next</span>
+              </div>
+              <div class="path-body">
+                <div class="mini-panel">
+                  <strong>Focus</strong>
+                  <div class="tag-row"><span class="skill-pill">FastAPI</span><span class="skill-pill">Docker Compose</span><span class="skill-pill">PostgreSQL</span><span class="skill-pill">Redis</span><span class="skill-pill">logging</span><span class="skill-pill">monitoring</span><span class="skill-pill">deployment</span></div>
+                </div>
+                <div class="mini-panel">
+                  <strong>Portfolio output</strong>
+                  <p class="muted">Mini GenAI platform with gateway API, vector database, model server, logs, dashboard, and README architecture.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specialization Branches -->
+    <section class="section alt" id="branches" aria-labelledby="branchesTitle">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Specialization Branches</p>
+          <h2 id="branchesTitle">Branch after the core path</h2>
+          <p class="muted">Pick one primary branch based on role target. The others can stay secondary until your portfolio is strong.</p>
+        </div>
+        <div class="branch-layout">
+          <div class="branch-hub" aria-label="Branching layout">
+            <div class="hub-line"></div>
+            <div class="hub-box">
+              <strong>Core Path Complete</strong>
+              <p class="muted">RAG + serving + platform</p>
+            </div>
+            <div class="hub-line"></div>
+          </div>
+          <div class="branch-grid">
+            <article class="branch-card">
+              <span class="branch-letter">A</span>
+              <div>
+                <h3>GPU Inference / NVIDIA-ready</h3>
+                <p class="muted">Best for LLM Inference Engineer and NVIDIA-style deployment roles.</p>
+              </div>
+              <span class="priority later">Later / Optional</span>
+              <div class="tag-row"><span class="skill-pill">vLLM</span><span class="skill-pill">KV cache</span><span class="skill-pill">batching</span><span class="skill-pill">quantization</span><span class="skill-pill">GPU memory</span><span class="skill-pill">ONNX</span><span class="skill-pill">Triton</span><span class="skill-pill">TensorRT basics</span></div>
+            </article>
+            <article class="branch-card">
+              <span class="branch-letter">B</span>
+              <div>
+                <h3>Multimodal / Vision AI</h3>
+                <p class="muted">Best when using existing CV/VLM work as a clear differentiator.</p>
+              </div>
+              <span class="priority later">Later / Optional</span>
+              <div class="tag-row"><span class="skill-pill">CLIP</span><span class="skill-pill">SigLIP</span><span class="skill-pill">VLM</span><span class="skill-pill">OCR+LLM</span><span class="skill-pill">image-text retrieval</span><span class="skill-pill">document AI</span><span class="skill-pill">multimodal RAG</span></div>
+            </article>
+            <article class="branch-card">
+              <span class="branch-letter">C</span>
+              <div>
+                <h3>LLMOps / Production Reliability</h3>
+                <p class="muted">Best for AI Platform Engineer and production GenAI system roles.</p>
+              </div>
+              <span class="priority next">Learn Next</span>
+              <div class="tag-row"><span class="skill-pill">evaluation</span><span class="skill-pill">logging</span><span class="skill-pill">monitoring</span><span class="skill-pill">prompt/version tracking</span><span class="skill-pill">feedback loop</span><span class="skill-pill">security</span><span class="skill-pill">deployment</span></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Ladder -->
+    <section class="section" id="projects" aria-labelledby="projectsTitle">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Project Ladder</p>
+          <h2 id="projectsTitle">Build portfolio proof in order</h2>
+          <p class="muted">Each project should leave behind a GitHub README that explains architecture, trade-offs, benchmarks, and screenshots.</p>
+        </div>
+        <div class="project-ladder">
+          <article class="project-card">
+            <span class="project-index">Project 1</span>
+            <h3>Production RAG System</h3>
+            <div><strong>Goal</strong><p class="muted">Turn a chatbot demo into a measurable document QA system.</p></div>
+            <div><strong>Tech stack</strong><p class="muted">FastAPI, vector DB, reranker, structured logs, eval set.</p></div>
+            <div><strong>Definition of done</strong><p class="muted">Citations, retrieval logs, recall@k, latency, failure cases.</p></div>
+            <div><strong>Show in README</strong><p class="muted">Architecture diagram, eval table, sample questions, screenshots.</p></div>
+          </article>
+          <article class="project-card">
+            <span class="project-index">Project 2</span>
+            <h3>vLLM Inference Benchmark</h3>
+            <div><strong>Goal</strong><p class="muted">Benchmark local model serving instead of only calling hosted APIs.</p></div>
+            <div><strong>Tech stack</strong><p class="muted">vLLM, OpenAI-compatible API, GPU metrics, benchmark script.</p></div>
+            <div><strong>Definition of done</strong><p class="muted">TTFT, TPOT, tokens/sec, memory report, streaming demo.</p></div>
+            <div><strong>Show in README</strong><p class="muted">Benchmark chart, hardware config, commands, trade-offs.</p></div>
+          </article>
+          <article class="project-card">
+            <span class="project-index">Project 3</span>
+            <h3>Mini GenAI Platform</h3>
+            <div><strong>Goal</strong><p class="muted">Combine RAG, model serving, API gateway, and observability.</p></div>
+            <div><strong>Tech stack</strong><p class="muted">FastAPI, Docker Compose, PostgreSQL, Redis, vector DB, dashboard.</p></div>
+            <div><strong>Definition of done</strong><p class="muted">Services run locally, logs are inspectable, config is documented.</p></div>
+            <div><strong>Show in README</strong><p class="muted">Service diagram, API docs, runbook, dashboard screenshots.</p></div>
+          </article>
+          <article class="project-card">
+            <span class="project-index">Project 4</span>
+            <h3>Multimodal RAG Extension</h3>
+            <div><strong>Goal</strong><p class="muted">Extend GenAI beyond text with image or document understanding.</p></div>
+            <div><strong>Tech stack</strong><p class="muted">CLIP/SigLIP, OCR, VLM prompting, top-k retrieval, eval metrics.</p></div>
+            <div><strong>Definition of done</strong><p class="muted">Image-text retrieval works with visible examples and recall@k.</p></div>
+            <div><strong>Show in README</strong><p class="muted">Visual demo, retrieval examples, metric table, limitations.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skill Matrix -->
+    <section class="section alt" id="skills" aria-labelledby="skillsTitle">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Skill Matrix</p>
+          <h2 id="skillsTitle">Priority decides what to study first</h2>
+          <p class="muted">Search to highlight skills across the matrix.</p>
+        </div>
+        <div class="matrix-toolbar">
+          <label class="muted" for="skillSearch">Filter skills</label>
+          <input class="search" id="skillSearch" type="search" placeholder="Try: vLLM, RAG, Triton, OCR" autocomplete="off" />
+        </div>
+        <div class="matrix-grid">
+          <article class="matrix-col">
+            <h3>Must Learn Now <span class="priority">Core</span></h3>
+            <div class="tag-row"><span class="skill-pill">RAG evaluation</span><span class="skill-pill">reranking</span><span class="skill-pill">hybrid search</span><span class="skill-pill">citations</span><span class="skill-pill">document parsing</span><span class="skill-pill">metadata filtering</span><span class="skill-pill">logging</span><span class="skill-pill">FastAPI basics</span></div>
+          </article>
+          <article class="matrix-col">
+            <h3>Learn Next <span class="priority next">Growth</span></h3>
+            <div class="tag-row"><span class="skill-pill">vLLM</span><span class="skill-pill">KV cache</span><span class="skill-pill">batching</span><span class="skill-pill">streaming</span><span class="skill-pill">TTFT</span><span class="skill-pill">TPOT</span><span class="skill-pill">Docker Compose</span><span class="skill-pill">monitoring</span><span class="skill-pill">prompt/version tracking</span></div>
+          </article>
+          <article class="matrix-col">
+            <h3>Later / Optional <span class="priority later">Branch</span></h3>
+            <div class="tag-row"><span class="skill-pill">ONNX</span><span class="skill-pill">Triton</span><span class="skill-pill">TensorRT basics</span><span class="skill-pill">CLIP</span><span class="skill-pill">SigLIP</span><span class="skill-pill">VLM</span><span class="skill-pill">OCR+LLM</span><span class="skill-pill">multimodal RAG</span><span class="skill-pill">GPU profiling</span></div>
+          </article>
+          <article class="matrix-col">
+            <h3>Not Priority <span class="priority no">Avoid</span></h3>
+            <div class="tag-row"><span class="skill-pill">Speech AI</span><span class="skill-pill">Research Scientist</span><span class="skill-pill">AI Researcher</span><span class="skill-pill">Embedded/Firmware</span><span class="skill-pill">CUDA Compiler</span><span class="skill-pill">Data Analyst</span><span class="skill-pill">audio pipelines</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interview Readiness -->
+    <section class="section" id="interview" aria-labelledby="interviewTitle">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Interview Readiness</p>
+          <h2 id="interviewTitle">Turn projects into interview stories</h2>
+        </div>
+        <div class="interview-grid">
+          <article class="card readiness-card">
+            <h3>RAG System Design</h3>
+            <p class="muted">Explain ingestion, chunking, retrieval, reranking, grounding, citations, and evaluation.</p>
+            <div class="progress-track" aria-hidden="true"><div class="progress-fill" style="width: 90%"></div></div>
+            <span class="priority">Must Learn Now</span>
+          </article>
+          <article class="card readiness-card">
+            <h3>LLM Serving</h3>
+            <p class="muted">Explain prefill vs decode, KV cache, continuous batching, latency metrics, and memory constraints.</p>
+            <div class="progress-track" aria-hidden="true"><div class="progress-fill" style="width: 66%"></div></div>
+            <span class="priority next">Learn Next</span>
+          </article>
+          <article class="card readiness-card">
+            <h3>Platform Reliability</h3>
+            <p class="muted">Explain gateway design, logs, monitoring, timeouts, deployment, feedback loop, and security basics.</p>
+            <div class="progress-track" aria-hidden="true"><div class="progress-fill" style="width: 58%"></div></div>
+            <span class="priority next">Learn Next</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Target Roles -->
+    <section class="section alt" id="roles" aria-labelledby="rolesTitle">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Target Roles</p>
+          <h2 id="rolesTitle">Aim for production AI engineering roles</h2>
+        </div>
+        <div class="roles-grid">
+          <article class="card role-card">
+            <h3>Primary Roles</h3>
+            <ul class="clean-list"><li>AI Engineer</li><li>GenAI Engineer</li><li>LLM Engineer</li><li>Applied AI Engineer</li><li>AI Platform Engineer</li><li>LLM Inference Engineer</li></ul>
+          </article>
+          <article class="card role-card">
+            <h3>Secondary Roles</h3>
+            <ul class="clean-list"><li>Machine Learning Engineer</li><li>Deep Learning Engineer</li><li>Vision AI Engineer</li><li>Multimodal AI Engineer</li><li>MLOps Engineer for AI Systems</li></ul>
+          </article>
+          <article class="card role-card no">
+            <h3>Not Priority</h3>
+            <ul class="clean-list"><li>Speech AI Engineer</li><li>Research Scientist</li><li>AI Researcher</li><li>Embedded/Firmware Engineer</li><li>CUDA Compiler Engineer</li><li>Data Analyst</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Positioning Pitch -->
+    <section class="section" id="pitch" aria-labelledby="pitchTitle">
+      <div class="container">
+        <article class="pitch-card">
+          <div>
+            <p class="eyebrow">Positioning Pitch</p>
+            <h2 id="pitchTitle">AI Engineer focused on production RAG, LLM serving, and GenAI platform systems.</h2>
+          </div>
+          <div class="pitch-grid">
+            <div>
+              <h3>Short pitch</h3>
+              <p class="muted">I build production-style LLM/RAG systems with document ingestion, vector retrieval, reranking, streaming generation, evaluation, and monitoring. I am expanding toward GPU-aware inference using vLLM and platform-level GenAI deployment with clear reliability practices.</p>
+            </div>
+            <div>
+              <h3>Proof points</h3>
+              <ul class="clean-list">
+                <li>Production RAG system with retrieval quality metrics, citations, and failure analysis.</li>
+                <li>vLLM serving benchmark with latency, throughput, and GPU memory reporting.</li>
+                <li>Mini GenAI platform with gateway API, model server, vector database, logs, and dashboard.</li>
+                <li>Optional multimodal extension using CLIP/SigLIP-style image-text retrieval or document AI.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>Built as a practical roadmap for AI Engineer growth: RAG → Inference → Platform → NVIDIA-ready stack → Multimodal systems.</p>
+  <footer class="footer">
+    <p>Built as a portfolio-ready AI Engineer career roadmap: production RAG → LLM serving → GenAI platform → specialization branches.</p>
   </footer>
 
   <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
 
   <script>
-    // Navigation, scroll progress, and section state
-    const progressBar = document.getElementById("progressBar");
+    const scrollProgress = document.getElementById("scrollProgress");
     const backToTop = document.getElementById("backToTop");
-    const navLinks = Array.from(document.querySelectorAll(".nav-link"));
     const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.getElementById("navLinks");
-    const observedSections = navLinks
-      .map((link) => document.querySelector(link.getAttribute("href")))
-      .filter(Boolean);
+    const navLinksWrap = document.getElementById("navLinks");
+    const navLinks = Array.from(document.querySelectorAll(".nav-link"));
+    const sections = navLinks.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
 
-    function updateScrollUi() {
-      const scrollTop = window.scrollY;
+    function updateScrollState() {
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
-      progressBar.style.width = progress + "%";
-      backToTop.classList.toggle("visible", scrollTop > 520);
+      const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+      scrollProgress.style.width = progress + "%";
+      backToTop.classList.toggle("visible", window.scrollY > 520);
     }
 
-    window.addEventListener("scroll", updateScrollUi, { passive: true });
-    updateScrollUi();
+    window.addEventListener("scroll", updateScrollState, { passive: true });
+    updateScrollState();
 
-    const sectionObserver = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        const activeId = "#" + entry.target.id;
+        const activeHref = "#" + entry.target.id;
         navLinks.forEach((link) => {
-          link.classList.toggle("active", link.getAttribute("href") === activeId);
+          link.classList.toggle("active", link.getAttribute("href") === activeHref);
         });
       });
-    }, { rootMargin: "-35% 0px -55% 0px", threshold: 0.01 });
+    }, { rootMargin: "-38% 0px -54% 0px", threshold: 0.01 });
 
-    observedSections.forEach((section) => sectionObserver.observe(section));
+    sections.forEach((section) => observer.observe(section));
 
-    function closeMobileMenu() {
-      navMenu.classList.remove("open");
+    function closeMenu() {
+      navLinksWrap.classList.remove("open");
       menuToggle.setAttribute("aria-expanded", "false");
       document.body.classList.remove("no-scroll");
     }
 
     menuToggle.addEventListener("click", () => {
-      const isOpen = navMenu.classList.toggle("open");
+      const isOpen = navLinksWrap.classList.toggle("open");
       menuToggle.setAttribute("aria-expanded", String(isOpen));
       document.body.classList.toggle("no-scroll", isOpen);
     });
 
-    navLinks.forEach((link) => {
-      link.addEventListener("click", closeMobileMenu);
-    });
+    navLinks.forEach((link) => link.addEventListener("click", closeMenu));
 
     backToTop.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // Skill filter
     const skillSearch = document.getElementById("skillSearch");
-    const skillPills = Array.from(document.querySelectorAll("#skills .pill"));
+    const skillPills = Array.from(document.querySelectorAll(".skill-pill"));
 
     skillSearch.addEventListener("input", (event) => {
       const query = event.target.value.trim().toLowerCase();
       skillPills.forEach((pill) => {
-        const isMatch = query.length > 0 && pill.textContent.toLowerCase().includes(query);
-        pill.classList.toggle("match", isMatch);
-        pill.classList.toggle("dimmed", query.length > 0 && !isMatch);
+        const matches = query && pill.textContent.toLowerCase().includes(query);
+        pill.classList.toggle("match", Boolean(matches));
+        pill.classList.toggle("dimmed", Boolean(query && !matches));
       });
     });
   </script>
